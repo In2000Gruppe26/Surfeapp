@@ -8,6 +8,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //test
-        // Test på å pushe
+        // Test på å pushe Andrea
     }
 }
