@@ -9,6 +9,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         //test
         // Funker det å pushe?
+        // emilie
 
     }
 }
