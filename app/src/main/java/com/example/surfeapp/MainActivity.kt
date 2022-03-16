@@ -11,6 +11,6 @@ class MainActivity : AppCompatActivity() {
         // Funker det å pushe?
         // emilie
         // test2 Magnu
-        //testVenus
+        //TESTVenus
     }
 }
