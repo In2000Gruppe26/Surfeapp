@@ -2,20 +2,14 @@ package com.example.surfeapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 
-class MainActivity : AppCompatActivity() {
+class SpotActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        //test
-        // Funker det å pushe?
-        // emilie
-        // test2 Magnu
-        //TESTVenus2
+        setContentView(R.layout.activity_spot)
 
-
-
-
+        val tekst = findViewById<TextView>(R.id.textEksempel)
 
     }
 }
