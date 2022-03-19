@@ -24,6 +24,6 @@ fun Surfespot.getConditions(): Conditions{
     // navn_på_Surfespot_objekt.getConditions()
 
 
-data class Conditions(val waveSize: Int, val waveFrequency: Int, val waveDirection: Int)
+data class Conditions(val waveSize: Int, val currentSpeed: Int, val currentDirection: Int)
     // BESKRIVELSE
     // Dette er et objekt med værforhold
