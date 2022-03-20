@@ -1,20 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SpotActivity">
-
+    tools:context=".SpotActivity"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textEksempel"
+        android:id="@+id/tekstTittel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Eksempel"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        android:text="SURFESPOT"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/card_view1"
+        app:cardCornerRadius="2dp"
+        android:layout_marginTop="21dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/teal_200"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tekst1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID:"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+
+                />
+
+            <TextView
+                android:id="@+id/tekstId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eksempel"
+                android:layout_below="@id/tekst1"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"/>
+
+        </RelativeLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/card_view2"
+        app:cardCornerRadius="2dp"
+        android:layout_marginTop="21dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/teal_200"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tekst2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Navn:"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+
+                />
+
+            <TextView
+                android:id="@+id/tekstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eksempel"
+                android:layout_below="@id/tekst2"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/card_view3"
+        app:cardCornerRadius="2dp"
+        android:layout_marginTop="21dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/teal_200"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tekst3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beskrivelse:"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+
+                />
+
+            <TextView
+                android:id="@+id/tekstDes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eksempel"
+                android:layout_below="@id/tekst3"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/card_view4"
+        app:cardCornerRadius="2dp"
+        android:layout_marginTop="21dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/teal_200"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tekst4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Posisjon:"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+
+                />
+
+            <TextView
+                android:id="@+id/tekstLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eksempel"
+                android:layout_below="@id/tekst4"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                />
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
