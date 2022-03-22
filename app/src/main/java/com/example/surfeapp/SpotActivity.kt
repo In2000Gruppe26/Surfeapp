@@ -25,7 +25,7 @@ class SpotActivity : AppCompatActivity() {
          viewModel.getSurfespots().observe(this) {
              tekstId.text = it.list[0].id.toString()
              tekstName.text = it.list[0].name
-             tekstLocation.text = it.list[0].location.toString()
+             tekstLocation.text = it.list[0].coordinates.toString()
              tekstDes.text = it.list[0].description.toString()
          }
 

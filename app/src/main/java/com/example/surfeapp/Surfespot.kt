@@ -1,7 +1,9 @@
 package com.example.surfeapp
 import android.location.Location
 
-data class Surfespot(val id: Int, val name: String, val location: Location, val description: String?)
+data class Coordinates(val latitude: Double, val longitude: Double)
+
+data class Surfespot(val id: Int, val name: String, val coordinates: Coordinates, val description: String?)
     // BESKRIVELSE
     // Dette er 'Surfespot' objektet.
     // Hvert 'spot' har en id, et navn, en posisjon, og *kan* ha en beskrivelse
@@ -24,6 +26,6 @@ fun Surfespot.getConditions(): Conditions{
     // navn_på_Surfespot_objekt.getConditions()
 
 
-data class Conditions(val waveSize: Int, val currentSpeed: Int, val currentDirection: Int)
+data class Conditions(var waveSize: Float?, val currentSpeed: Float?, val currentDirection: Float?)
     // BESKRIVELSE
     // Dette er et objekt med værforhold

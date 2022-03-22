@@ -2,17 +2,11 @@ package com.example.surfeapp
 
 import android.location.Location
 import android.location.LocationManager
-import android.os.Build
-import androidx.annotation.RequiresApi
-
-import java.io.IOException
-import java.io.InputStreamReader
-import java.net.URL
-import javax.net.ssl.HttpsURLConnection
-import java.util.Base64
-import org.json.JSONArray
-import org.json.JSONObject
-import org.json.JSONTokener
+import com.github.kittinunf.fuel.Fuel
+import com.github.kittinunf.fuel.coroutines.awaitString
+import com.google.gson.Gson
+import kotlinx.coroutines.runBlocking
+import kotlin.math.absoluteValue
 
 class DataSource {
 //CLIENT ID FROST: af800469-bcec-450b-95c7-d7944ca2b73b
@@ -23,24 +17,59 @@ class DataSource {
         // Når du bruker Surfespot.getConditions så kaller den egentlig bare på denne
 
         // LEGGE TIL ASYNKRON GET MED FUEL HER <------------
-        var url = "https://api.met.no/weatherapi/oceanforecast/2.0/complete?"
-        url += "lat=" + "58.8849857"
-        url += "&lon=" + "5.60265"
+        var url = "https://in2000-apiproxy.ifi.uio.no/weatherapi/oceanforecast/2.0/complete?"
 
+        url += "lat=" + spot.coordinates.latitude.toString()
+        url += "&lon=" + spot.coordinates.longitude.toString()
 
-        return Conditions(1, 2, 3)
+        val gson = Gson()
+        var conditions:Conditions = Conditions(0.0F, 0.0F, 0.0F)
+        runBlocking {
+            try {
+                println(Fuel.get(url).awaitString())
+                val response = gson.fromJson(Fuel.get(url).awaitString(), Base::class.java)
+                println(response.toString())
+                val wavesize:Float? = response.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_surface_wave_height
+                val currentspeed:Float? = response.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_water_speed
+                val currentdirection:Float? = response.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_water_to_direction
+                conditions = Conditions(wavesize, currentspeed, currentdirection)
+            } catch(exception: Exception) {
+                println("A network request exception was thrown: ${exception.message}")
+            }
+        }
+        println(conditions.toString())
+        return conditions
     }
     public fun getSpots():Spots{
         // BESKRIVELSE
-        // Kall på denne funksjonen for å få en liste med alle surfespot-objekter
+        // Kall på denne funksjonen for å få en liste med alle surfespot-objekte
 
-        val posisjon:Location = Location(LocationManager.GPS_PROVIDER)
-        posisjon.latitude = 5.60265
-        posisjon.longitude = 58.8849857
-        val eksempelSpot:Surfespot = Surfespot(0, "Solastranden", posisjon, "Et eksempel på en beskrivelse.")
+        val coordinates:Coordinates = Coordinates(58.8849857, 5.60265)
+
+        val eksempelSpot:Surfespot = Surfespot(0, "Solastranden", coordinates, "Et eksempel på en beskrivelse.")
 
         val spots:Spots = Spots(listOf<Surfespot>(eksempelSpot))
 
         return spots
     }
 }
+
+// result generated from /json
+
+data class Base(val type: String?, val geometry: Geometry?, val properties: Properties?)
+
+data class Data(val instant: Instant?)
+
+data class Details(val sea_surface_wave_from_direction: Float?, val sea_surface_wave_height: Float?, val sea_water_speed: Float?, val sea_water_temperature: Float?, val sea_water_to_direction: Float?)
+
+data class Geometry(val type: String?, val coordinates: List<Number>?)
+
+data class Instant(val details: Details?)
+
+data class Meta(val updated_at: String?, val units: Units?)
+
+data class Properties(val meta: Meta?, val timeseries: List<Timeseries139117139>?)
+
+data class Timeseries139117139(val time: String?, val data: Data?)
+
+data class Units(val sea_surface_wave_from_direction: String?, val sea_surface_wave_height: String?, val sea_water_speed: String?, val sea_water_temperature: String?, val sea_water_to_direction: String?)
