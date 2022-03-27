@@ -7,6 +7,7 @@ import com.github.kittinunf.fuel.coroutines.awaitString
 import com.google.gson.Gson
 import kotlinx.coroutines.runBlocking
 import kotlin.math.absoluteValue
+import kotlin.math.exp
 
 class DataSource {
 //CLIENT ID FROST: af800469-bcec-450b-95c7-d7944ca2b73b
@@ -40,6 +41,53 @@ class DataSource {
         println(conditions.toString())
         return conditions
     }
+
+    public fun getRating(spot:Surfespot):Int{
+        var conditions:Conditions = getConditions(spot)
+
+        val waveSize:Float = conditions.waveSize?.toFloat() ?: 0.toFloat()
+        val waveSpeed:Float = conditions.currentSpeed?.toFloat() ?: 0.toFloat()
+
+        var j = 13.8
+        var tot:Float = 0.0.toFloat()
+        var i = j
+
+        var probabilities = mutableListOf<Float>()
+        for(a in 3..7){
+            if(a > 3){
+                if(a == 7){
+                    probabilities.add(a-3, 1 - tot)
+                }else if(a == 4){
+                    i = j + 1.5
+                    probabilities.add(a-3, (exp(i-3.130*waveSize-1.184*waveSpeed)/(1+exp(i-3.130*waveSize-1.184*waveSpeed))-exp(j-3.130*waveSize-1.184*waveSpeed)/(1+exp(j-3.130*waveSize-1.184*waveSpeed))).toFloat())
+                    tot = tot + (exp(i-3.130*waveSize-1.184*waveSpeed)/(1+exp(i-3.130*waveSize-1.184*waveSpeed))-exp(j-3.130*waveSize-1.184*waveSpeed)/(1+exp(j-3.130*waveSize-1.184*waveSpeed))).toFloat()
+                }else{
+                    i = j + 2.5
+                    probabilities.add(a-3,(exp(i-3.130*waveSize-1.184*waveSpeed)/(1+exp(i-3.130*waveSize-1.184*waveSpeed))-exp(j-3.130*waveSize-1.184*waveSpeed)/(1+exp(j-3.130*waveSize-1.184*waveSpeed))).toFloat())
+                    tot = tot + (exp(i-3.130*waveSize-1.184*waveSpeed)/(1+exp(i-3.130*waveSize-1.184*waveSpeed))-exp(j-3.130*waveSize-1.184*waveSpeed)/(1+exp(j-3.130*waveSize-1.184*waveSpeed))).toFloat()
+
+                }
+            }else{
+                i = j
+                probabilities.add(a-3, (exp(i-3.130*waveSize-1.184*waveSpeed)/(1+exp(i-3.130*waveSize-1.184*waveSpeed))).toFloat())
+                tot = tot + (exp(i-3.130*waveSize-1.184*waveSpeed)/(1+exp(i-3.130*waveSize-1.184*waveSpeed))).toFloat()
+            }
+            j = i
+        }
+
+        var max:Float = 0.0.toFloat()
+        var bestGuess = 0
+        var k:Int = 0
+        for(p in probabilities){
+            if(p > max){
+                max = p
+                bestGuess = k
+            }
+            k++
+        }
+        return bestGuess + 1
+    }
+
     public fun getSpots():Spots{
         // BESKRIVELSE
         // Kall på denne funksjonen for å få en liste med alle surfespot-objekte
