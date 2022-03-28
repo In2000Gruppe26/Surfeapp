@@ -3,7 +3,8 @@ package com.example.testmaps
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.surfeapp.R
-import android.databinding.DataBindingUtil
+//import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -11,7 +12,8 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.example.testmaps.databinding.ActivityMapsBinding
+import com.example.surfeapp.databinding.ActivityMapsBinding
+import com.google.android.material.internal.ViewUtils.getContentView
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -23,6 +25,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //binding = DataBindingUtil.setContentView(this, getContentView());
+
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
