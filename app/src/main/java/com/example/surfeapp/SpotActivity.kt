@@ -29,9 +29,9 @@ class SpotActivity : AppCompatActivity() {
 
 
          viewModel.getSurfespots().observe(this) {
-             tekstBolge.text = "Tmp"
-             tekstVind.text = "Tmp"
-             tekstTemp.text = "Tmp"
+             tekstBolge.text = "Sett"
+             tekstVind.text = "Sett"
+             tekstTemp.text = "Sett"
              tekstBes.text = it.list[0].description.toString()
          }
 
