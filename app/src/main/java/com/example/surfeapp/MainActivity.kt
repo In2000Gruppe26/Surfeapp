@@ -4,30 +4,48 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.surfeapp.R
+//import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
+
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
+import com.example.surfeapp.databinding.ActivityMainBinding
+import com.google.android.material.internal.ViewUtils.getContentView
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+    private lateinit var mMap: GoogleMap
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        //test
-        // Funker det å pushe?
-        // emilie
-        // test2 Magnu
-        //TESTVenus2
 
-        //Midlertidig button til SpotActivity (V)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        //binding = DataBindingUtil.setContentView(this, getContentView());
 
-        val knapp = findViewById<Button>(R.id.buttonTilSpot)
 
-        knapp.setOnClickListener() {
-            val intent = Intent(this, SpotActivity::class.java)
-            startActivity(intent)
-        }
-        val tilmaps = findViewById<Button>(R.id.buttonTilMap)
-        tilmaps.setOnClickListener() {
-            val intent = Intent(this, MapsActivity::class.java)
-            startActivity(intent)
-        }
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
     }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+
+        // Add a marker in Sydney and move the camera
+        val Hustadvika = LatLng(59.9174938, 10.7115087)
+        mMap.addMarker(MarkerOptions().position(Hustadvika).title("Bolig til hunkmaster69420@ghotmail.com"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(Hustadvika))
+    }
+
 }
+//<activity
+//            android:name=".MapsActivity"
+//            android:exported="false" />
