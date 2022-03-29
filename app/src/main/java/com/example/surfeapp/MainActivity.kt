@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +22,11 @@ class MainActivity : AppCompatActivity() {
 
         knapp.setOnClickListener() {
             val intent = Intent(this, SpotActivity::class.java)
+            startActivity(intent)
+        }
+        val tilmaps = findViewById<Button>(R.id.buttonTilMap)
+        tilmaps.setOnClickListener() {
+            val intent = Intent(this, MapsActivity::class.java)
             startActivity(intent)
         }
     }

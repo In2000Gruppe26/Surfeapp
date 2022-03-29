@@ -1,4 +1,4 @@
-package com.example.testmaps
+package com.example.surfeapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
