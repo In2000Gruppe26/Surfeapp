@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         //TESTVenus2
 
         //Midlertidig button til SpotActivity (V)
+        
 
         val knapp = findViewById<Button>(R.id.buttonTilSpot)
 

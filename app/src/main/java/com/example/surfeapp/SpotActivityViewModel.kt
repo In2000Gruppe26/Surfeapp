@@ -1,5 +1,6 @@
 package com.example.surfeapp
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -18,9 +19,9 @@ class SpotActivityViewModel : ViewModel() {
         return surfespots
     }
 
-    fun fetchSurfespots() {
+    fun fetchSurfespots(context: Context) {
         viewModelScope.launch(Dispatchers.IO) {
-            dataSource.getSpots().also {
+            dataSource.getSpots(context).also {
                 surfespots.postValue(it)
             }
         }

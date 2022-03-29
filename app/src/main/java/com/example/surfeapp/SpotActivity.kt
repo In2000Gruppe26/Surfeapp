@@ -30,7 +30,7 @@ class SpotActivity : AppCompatActivity() {
          }
 
 
-         viewModel.fetchSurfespots()
+         viewModel.fetchSurfespots(applicationContext)
 
 
     }

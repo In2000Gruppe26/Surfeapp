@@ -6,8 +6,19 @@ import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.coroutines.awaitString
 import com.google.gson.Gson
 import kotlinx.coroutines.runBlocking
+import java.io.IOException
 import kotlin.math.absoluteValue
 import kotlin.math.exp
+import android.content.Context
+import androidx.core.content.ContentProviderCompat.requireContext
+import java.security.AccessControlContext
+import java.security.AccessController.getContext
+import kotlin.coroutines.coroutineContext
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+import java.io.InputStream;
+import java.util.*
 
 class DataSource {
 //CLIENT ID FROST: af800469-bcec-450b-95c7-d7944ca2b73b
@@ -88,9 +99,28 @@ class DataSource {
         return bestGuess + 1
     }
 
-    public fun getSpots():Spots{
+    public fun getSpots(context: Context): Spots? {
         // BESKRIVELSE
         // Kall på denne funksjonen for å få en liste med alle surfespot-objekte
+        val jsonString: String
+        val gson = Gson()
+
+        try {
+            jsonString = context.assets.open("surfespots.json").bufferedReader().use { it.readText() }
+            val response = gson.fromJson(jsonString, Spots_json::class.java)
+            println(response.toString())
+            var converted_response:MutableList<Surfespot> = mutableListOf()
+            for (i in response.list){
+                val tmp_spot:Surfespot = Surfespot(i.id, i.name, Coordinates(i.latitude, i.longitude), i.description)
+                converted_response.add(tmp_spot)
+            }
+            val spots: Spots = Spots(converted_response)
+            return spots
+        } catch (ioException: IOException) {
+            ioException.printStackTrace()
+            return null
+        }
+
 
         val coordinates:Coordinates = Coordinates(58.8849857, 5.60265)
 
@@ -121,3 +151,7 @@ data class Properties(val meta: Meta?, val timeseries: List<Timeseries139117139>
 data class Timeseries139117139(val time: String?, val data: Data?)
 
 data class Units(val sea_surface_wave_from_direction: String?, val sea_surface_wave_height: String?, val sea_water_speed: String?, val sea_water_temperature: String?, val sea_water_to_direction: String?)
+
+data class Surfespot_json(val id: Int, val name: String, val latitude: Double, val longitude: Double, val description: String?)
+
+data class Spots_json(val list: List<Surfespot_json>)
