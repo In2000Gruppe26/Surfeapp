@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nybegynner"
+        android:title="Nybegynner?" />
+    <item
+        android:id="@+id/tips"
+        android:title="Tips og triks" />
+    <item
+        android:id="@+id/om"
+        android:title="Om appen" />
+</menu>
