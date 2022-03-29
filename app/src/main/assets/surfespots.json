@@ -1,0 +1,249 @@
+﻿{
+    "list": [
+        {
+            "id": "1",
+            "name": "Alnes fyr",
+            "latitude": "62.490408",
+            "longitude": "5.962346",
+            "description": "Steinstrand"
+        },
+        {
+            "id": "2",
+            "name": "Berlevåg Sandfjorden",
+            "latitude": "70.7982047",
+            "longitude": "29.2454337",
+            "description": "Lang strand"
+        },
+        {
+            "id": "3",
+            "name": "Boresanden",
+            "latitude": "58.8007305",
+            "longitude": "5.5483482",
+            "description": "Sandstrand"
+        },
+        {
+            "id": "4",
+            "name": "Brusand",
+            "latitude": "58.534152",
+            "longitude": "5.754511",
+            "description": "Stor sandstrand"
+        },
+        {
+            "id": "5",
+            "name": "Ducks",
+            "latitude": "69.068591",
+            "longitude": "15.525122",
+            "description": "Steinete"
+        },
+        {
+            "id": "6",
+            "name": "Ervik",
+            "latitude": "62.1664637",
+            "longitude": "5.1148224",
+            "description": "Sandstrand"
+        },
+        {
+            "id": "7",
+            "name": "Farstadstranden",
+            "latitude": "62.982730",
+            "longitude": "7.152414",
+            "description": "Liten sandstrand"
+        },
+        {
+            "id": "8",
+            "name": "Fløstranda",
+            "latitude": "62.3867226",
+            "longitude": "5.8304103",
+            "description": "Skjær"
+        },
+        {
+            "id": "9",
+            "name": "G-force",
+            "latitude": "68.638660",
+            "longitude": "14.432433",
+            "description": "Steinete"
+        },
+        {
+            "id": "10",
+            "name": "Havik Strand",
+            "latitude": "58.067319",
+            "longitude": "6.727291",
+            "description": "Surfeskole"
+        },
+        {
+            "id": "11",
+            "name": "Hellestøstranden",
+            "latitude": "58.841140",
+            "longitude": "5.560690",
+            "description": "Stor sandstrand, utleie/surfeskole"
+        },
+        {
+            "id": "12",
+            "name": "Hemnesvika, Karmøy",
+            "latitude": "59.199336",
+            "longitude": "5.180888",
+            "description": "Liten sandstrand"
+        },
+        {
+            "id": "13",
+            "name": "Hoddevik",
+            "latitude": "58.8849857",
+            "longitude": "5.60265",
+            "description": "Surfeskole "
+        },
+        {
+            "id": "14",
+            "name": "Kvassheim",
+            "latitude": "58.549514",
+            "longitude": "5.675106",
+            "description": "Ser ut som veldig steinete"
+        },
+        {
+            "id": "15",
+            "name": "Langeby",
+            "latitude": "59.077890",
+            "longitude": "10.261781",
+            "description": "Liten sandstrand"
+        },
+        {
+            "id": "16",
+            "name": "Løpsvika",
+            "latitude": "67.324000",
+            "longitude": "14.480065",
+            "description": "Stor sandstrand"
+        },
+        {
+            "id": "17",
+            "name": "Melandsjøen",
+            "latitude": "66.948197",
+            "longitude": "13.741238",
+            "description": "Skjær"
+        },
+        {
+            "id": "18",
+            "name": "Midtfløsanden",
+            "latitude": "62.406185",
+            "longitude": "5.851190",
+            "description": "Liten sandstrand"
+        },
+        {
+            "id": "19",
+            "name": "Naverfjorden",
+            "latitude": "58.981309",
+            "longitude": "9.981760",
+            "description": "Ut fra steinete molo"
+        },
+        {
+            "id": "20",
+            "name": "Persfjord",
+            "latitude": "70.4201376",
+            "longitude": "30.7908117",
+            "description": "Sand og klipper"
+        },
+        {
+            "id": "21",
+            "name": "Point Perfect, Skeiestranda, Orre",
+            "latitude": "58.697549",
+            "longitude": "5.539877",
+            "description": "Ut fra steiner"
+        },
+        {
+            "id": "22",
+            "name": "Porsangvika",
+            "latitude": "70.8741290",
+            "longitude": "25.8613508",
+            "description": "Steinstrand"
+        },
+        {
+            "id": "23",
+            "name": "Refsnesstranda",
+            "latitude": "58.687480",
+            "longitude": "5.551086",
+            "description": "Stor sandstrand"
+        },
+        {
+            "id": "24",
+            "name": "Revesanden",
+            "latitude": "58.757476",
+            "longitude": "5.495469",
+            "description": "Stor sandstrand"
+        },
+        {
+            "id": "25",
+            "name": "Saltstein",
+            "latitude": "58.966499",
+            "longitude": "9.850051",
+            "description": "Ut fra steinete område"
+        },
+        {
+            "id": "26",
+            "name": "Saltstraumen",
+            "latitude": "67.203201",
+            "longitude": "14.358142",
+            "description": "Stor sandstrand"
+        },
+        {
+            "id": "27",
+            "name": "Sandvika badestrand, \"The Frog\"",
+            "latitude": "68.756938",
+            "longitude": "14.473932",
+            "description": "Liten sandstrand"
+        },
+        {
+            "id": "28",
+            "name": "Selestranden",
+            "latitude": "58.8159795",
+            "longitude": "5.5418790",
+            "description": "Steinstrand"
+        },
+        {
+            "id": "29",
+            "name": "Sjøstranda",
+            "latitude": "58.019977",
+            "longitude": "7.448316",
+            "description": "Stor sandstrand"
+        },
+        {
+            "id": "30",
+            "name": "Skallavoldbukta",
+            "latitude": "59.292554",
+            "longitude": "10.502219",
+            "description": "Stor sandstrand"
+        },
+        {
+            "id": "31",
+            "name": "Skallelv",
+            "latitude": "70.1892504",
+            "longitude": "30.3341265",
+            "description": "Ved munningen av Skallelva i Varangerfjorden"
+        },
+        {
+            "id": "32",
+            "name": "Solastranden",
+            "latitude": "58.887373",
+            "longitude": "5.601266",
+            "description": "Stor sandstrand, utleie/surfeskole"
+        },
+        {
+            "id": "33",
+            "name": "Storesand",
+            "latitude": "59.025138",
+            "longitude": "11.017506",
+            "description": "Liten sandstrand"
+        },
+        {
+            "id": "34",
+            "name": "Unstadstranden",
+            "latitude": "68.2687586",
+            "longitude": "13.5810711",
+            "description": "Lang sandstrand i bukt, Lofoten Surfe Center"
+        },
+        {
+            "id": "35",
+            "name": "Vøra",
+            "latitude": "59.072399",
+            "longitude": "10.259077",
+            "description": "Stor sandstrand"
+        }
+    ]
+}
