@@ -38,7 +38,7 @@ class DataSourceTest {
     fun testgetConditions(){
         val spot:Surfespot = DataSource().getSpots(context)?.list?.get(0)!!
         //Denne testen er litt håpløs fordi den sammenligner en statisk verdi med en variabel. Så her må expected justeres ihh til ekte data.
-        TestCase.assertEquals(0.2F, spot.getConditions().waveSize)
+        TestCase.assertEquals(2.4F, spot.getConditions().air_temperature)
     }
 
     @Test

@@ -32,6 +32,6 @@ fun Surfespot.getRating(): Int {
     // Funksjon som returnerer rating av forholdene på spottet.
     // funksjonen returnerer et tall mellom 1 og 5.
 
-data class Conditions(var waveSize: Float?, val currentSpeed: Float?, val currentDirection: Float?)
+data class Conditions(var waveSize: Float?, val currentSpeed: Float?, val currentDirection: Float?, val air_temperature: Float?, val precipitation_rate: Float?, val wind_speed: Float?, val wind_from_direction: Float?)
     // BESKRIVELSE
     // Dette er et objekt med værforhold

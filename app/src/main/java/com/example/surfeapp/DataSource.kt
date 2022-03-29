@@ -34,17 +34,31 @@ class DataSource {
         url += "lat=" + spot.coordinates.latitude.toString()
         url += "&lon=" + spot.coordinates.longitude.toString()
 
+        var url2 = "https://in2000-apiproxy.ifi.uio.no/weatherapi/nowcast/2.0/complete?"
+
+        url2 += "lat=" + spot.coordinates.latitude.toString()
+        url2 += "&lon=" + spot.coordinates.longitude.toString()
+
         val gson = Gson()
-        var conditions:Conditions = Conditions(0.0F, 0.0F, 0.0F)
+        var conditions:Conditions = Conditions(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F)
         runBlocking {
             try {
                 println(Fuel.get(url).awaitString())
                 val response = gson.fromJson(Fuel.get(url).awaitString(), Base::class.java)
+
+                val response2 = gson.fromJson(Fuel.get(url2).awaitString(), Base2::class.java)
                 println(response.toString())
+
                 val wavesize:Float? = response.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_surface_wave_height
                 val currentspeed:Float? = response.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_water_speed
                 val currentdirection:Float? = response.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_water_to_direction
-                conditions = Conditions(wavesize, currentspeed, currentdirection)
+
+                val air_temperature = response2.properties?.timeseries?.get(0)?.data?.instant?.details?.air_temperature
+                val precipitation_rate = response2.properties?.timeseries?.get(0)?.data?.instant?.details?.precipitation_rate
+                val wind_speed = response2.properties?.timeseries?.get(0)?.data?.instant?.details?.wind_speed
+                val wind_from_direction = response2.properties?.timeseries?.get(0)?.data?.instant?.details?.wind_from_direction
+
+                conditions = Conditions(wavesize, currentspeed, currentdirection, air_temperature, precipitation_rate, wind_speed, wind_from_direction)
             } catch(exception: Exception) {
                 println("A network request exception was thrown: ${exception.message}")
             }
@@ -120,15 +134,6 @@ class DataSource {
             ioException.printStackTrace()
             return null
         }
-
-
-        val coordinates:Coordinates = Coordinates(58.8849857, 5.60265)
-
-        val eksempelSpot:Surfespot = Surfespot(0, "Solastranden", coordinates, "Et eksempel på en beskrivelse.")
-
-        val spots:Spots = Spots(listOf<Surfespot>(eksempelSpot))
-
-        return spots
     }
 }
 
@@ -155,3 +160,32 @@ data class Units(val sea_surface_wave_from_direction: String?, val sea_surface_w
 data class Surfespot_json(val id: Int, val name: String, val latitude: Double, val longitude: Double, val description: String?)
 
 data class Spots_json(val list: List<Surfespot_json>)
+
+
+
+
+
+data class Base2(val type: String?, val geometry: Geometry2?, val properties: Properties2?)
+
+data class Data2(val instant: Instant2?, val next_1_hours: Next_1_hours2?)
+
+data class Details2(val air_temperature: Float?, val precipitation_rate: Float?, val relative_humidity: Float?, val wind_from_direction: Float?, val wind_speed: Float?, val wind_speed_of_gust: Float?)
+
+data class Geometry2(val type: String?, val coordinates: List<Number>?)
+
+data class Instant2(val details: Details2?)
+
+data class Meta2(val updated_at: String?, val units: Units2?, val radar_coverage: String?)
+
+data class Next_1_hours2(val summary: Summary2?, val details: Details2?)
+
+data class Properties2(val meta: Meta2?, val timeseries: List<Timeseries5905723>?)
+
+data class Summary2(val symbol_code: String?)
+
+data class Timeseries5905723(val time: String?, val data: Data2?)
+
+data class Units2(val air_temperature: String?, val precipitation_amount: String?, val precipitation_rate: String?, val relative_humidity: String?, val wind_from_direction: String?, val wind_speed: String?, val wind_speed_of_gust: String?)
+
+
+// result generated from /json
