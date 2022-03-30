@@ -97,10 +97,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
-        // Add a marker in Sydney and move the camera
-        val Hustadvika = LatLng(59.9174938, 10.7115087)
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(Hustadvika))
+        mMap.setMinZoomPreference(6.0f)
+        val starterScope = LatLng(61.140304, 8.542487)
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(starterScope))
     }
 
     // override the onSupportNavigateUp() function to launch the Drawer when the hamburger icon is clicked
