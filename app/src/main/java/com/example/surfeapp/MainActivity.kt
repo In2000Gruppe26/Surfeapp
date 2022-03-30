@@ -1,17 +1,14 @@
 package com.example.surfeapp
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
-import com.example.surfeapp.R
 //import android.databinding.DataBindingUtil
-import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.lifecycle.LiveData
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -20,7 +17,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.surfeapp.databinding.ActivityMainBinding
-import com.google.android.material.internal.ViewUtils.getContentView
 import com.google.android.material.navigation.NavigationView
 
 
@@ -77,14 +73,33 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
 
+
+        val viewModel1: MainActivityViewModel by viewModels()
+
+        viewModel1.getSurfespotsMain().observe(this) {
+            var i = 0
+            val size: Int = it.list.size
+            while (i < size) {
+                val longMain: Double = it.list[i].coordinates.longitude
+                val latMain: Double = it.list[i].coordinates.latitude
+                val nameCords: String = it.list[i].name
+                val temp = LatLng(latMain, longMain)
+                mMap.addMarker(MarkerOptions().position(temp).title(nameCords))
+                i++
+            }
+        }
+
+        viewModel1.fetchSurfespotsMain(applicationContext)
+
+
     }
+
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
         val Hustadvika = LatLng(59.9174938, 10.7115087)
-        mMap.addMarker(MarkerOptions().position(Hustadvika).title("Bolig til hunkmaster69420@ghotmail.com"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Hustadvika))
     }
 
