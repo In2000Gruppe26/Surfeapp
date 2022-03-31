@@ -1,7 +1,9 @@
 package com.example.surfeapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -112,6 +114,19 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             this.drawerLayout.openDrawer(GravityCompat.START)
         }
         return true
+    }
+
+    fun TilOmSiden(view: View) {
+        val intent = Intent(this, OmSiden::class.java)
+        startActivity(intent)
+    }
+    fun TilNybegynner(view: View) {
+        val intent = Intent(this, Nybegynner::class.java)
+        startActivity(intent)
+    }
+    fun TilTipsOgTriks(view: View) {
+        val intent = Intent(this, TipsOgTriks::class.java)
+        startActivity(intent)
     }
 
 }

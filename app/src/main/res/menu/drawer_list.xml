@@ -2,11 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nybegynner"
+        android:onClick="TilNybegynner"
         android:title="Nybegynner?" />
     <item
         android:id="@+id/tips"
+        android:onClick="TilTipsOgTriks"
         android:title="Tips og triks" />
     <item
         android:id="@+id/om"
+        android:onClick="TilOmSiden"
         android:title="Om appen" />
 </menu>
