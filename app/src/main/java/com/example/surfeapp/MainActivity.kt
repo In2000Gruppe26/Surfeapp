@@ -39,6 +39,13 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(binding.root)
         //binding = DataBindingUtil.setContentView(this, getContentView());
         //Midlertidig button til SpotActivity (V)
+
+        val knapp = findViewById<Button>(R.id.buttonTilSpot)
+        knapp.setOnClickListener() {
+            val intent = Intent(this, SpotActivity::class.java)
+            startActivity(intent)
+            }
+
         // Pass the ActionBarToggle action into the drawerListener
         drawerLayout = findViewById(R.id.drawerLayout)
 
