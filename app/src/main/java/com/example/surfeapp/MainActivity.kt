@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
                 val longMain: Double = it.list[i].coordinates.longitude
                 val latMain: Double = it.list[i].coordinates.latitude
                 val nameCords: String = it.list[i].name
-                val rating: Int = it.list[i].getRating()
+                val rating: Int = 1 //it.list[i].getRating()
                 val temp = LatLng(latMain, longMain)
                 //println("$nameCords ($rating/5)")
                 mMap.addMarker(MarkerOptions().position(temp).title("$nameCords ($rating/5)").snippet(it.list[i].description))
