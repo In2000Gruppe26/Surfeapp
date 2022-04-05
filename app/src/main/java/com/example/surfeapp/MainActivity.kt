@@ -19,10 +19,22 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.surfeapp.databinding.ActivityMainBinding
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.material.navigation.NavigationView
+import com.google.android.gms.maps.model.LatLngBounds
+import android.content.res.Resources
+import android.util.Log
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
+
+import com.google.android.gms.maps.model.MapStyleOptions
+import com.google.android.gms.maps.model.Marker
+import com.google.android.material.internal.ContextUtils.getActivity
 
 
-class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListener,
+    OnInfoWindowClickListener {
+
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMainBinding
 
@@ -30,14 +42,14 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var actionBarToggle: ActionBarDrawerToggle
     private lateinit var navView: NavigationView
 
+    private var myMarker: Marker? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
-        //binding = DataBindingUtil.setContentView(this, getContentView());
-        //Midlertidig button til SpotActivity (V)
-        // Pass the ActionBarToggle action into the drawerListener
+
         drawerLayout = findViewById(R.id.drawerLayout)
 
         actionBarToggle = ActionBarDrawerToggle(this, binding.root, 0, 0)
@@ -74,8 +86,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-
-
         val viewModel1: MainActivityViewModel by viewModels()
 
         viewModel1.getSurfespotsMain().observe(this) {
@@ -85,8 +95,13 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 val longMain: Double = it.list[i].coordinates.longitude
                 val latMain: Double = it.list[i].coordinates.latitude
                 val nameCords: String = it.list[i].name
+                val rating: Int = it.list[i].getRating()
                 val temp = LatLng(latMain, longMain)
-                mMap.addMarker(MarkerOptions().position(temp).title(nameCords))
+                //println("$nameCords ($rating/5)")
+                mMap.addMarker(MarkerOptions().position(temp).title("$nameCords ($rating/5)").snippet(it.list[i].description))
+
+                /* MARKER MED ICON:    mMap.addMarker(MarkerOptions().position(temp).title(nameCords).icon(
+                    BitmapDescriptorFactory.fromResource(R.drawable.bolge2)))*/
                 i++
             }
         }
@@ -96,17 +111,38 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
-
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+        mMap.setOnInfoWindowClickListener(this)
+
+
+        /*try {
+            // Customise the styling of the base map using a JSON object defined
+            // in a raw resource file.
+            val success = mMap.setMapStyle(
+                MapStyleOptions.loadRawResourceStyle(
+                    this, R.raw.style_json
+                )
+            )
+            if (!success) {
+                Log.e("Error", "Style parsing failed.")
+            }
+        } catch (e: Resources.NotFoundException) {
+            Log.e("Error", "Can't find style. Error: ", e)
+        }*/
+
         mMap.setMinZoomPreference(6.0f)
         val starterScope = LatLng(61.140304, 8.542487)
         mMap.moveCamera(CameraUpdateFactory.newLatLng(starterScope))
+
+        val adelaideBounds = LatLngBounds(
+            LatLng(57.456008, -9.808621),  // SW grenser
+            LatLng(80.291513, 33.990307) // NE grenser
+        )
+        mMap.setLatLngBoundsForCameraTarget(adelaideBounds)
+
     }
 
-    // override the onSupportNavigateUp() function to launch the Drawer when the hamburger icon is clicked
-
-    // override the onBackPressed() function to close the Drawer when the back button is clicked
     override fun onSupportNavigateUp(): Boolean {
         if (this.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             this.drawerLayout.closeDrawer(GravityCompat.START)
@@ -116,20 +152,26 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         return true
     }
 
-    fun TilOmSiden(view: View) {
+    fun TilOmSiden(item: android.view.MenuItem) {
         val intent = Intent(this, OmSiden::class.java)
         startActivity(intent)
     }
-    fun TilNybegynner(view: View) {
+    fun TilNybegynner(item: android.view.MenuItem) {
         val intent = Intent(this, Nybegynner::class.java)
         startActivity(intent)
     }
-    fun TilTipsOgTriks(view: View) {
+    fun TilTipsOgTriks(item: android.view.MenuItem) {
         val intent = Intent(this, TipsOgTriks::class.java)
         startActivity(intent)
     }
 
+    override fun onMarkerClick(marker: Marker): Boolean {
+        return false
+    }
+
+    override fun onInfoWindowClick(p0: Marker) {
+        Toast.makeText(applicationContext, "HEI", Toast.LENGTH_SHORT).show()
+    }
+
+
 }
-//<activity
-//            android:name=".MapsActivity"
-//            android:exported="false" />
