@@ -33,7 +33,7 @@ class SpotActivity : AppCompatActivity() {
          val tekstBes = findViewById<TextView>(R.id.besTekst)
          val rating = findViewById<RatingBar>(R.id.rating1)
 
-
+         val spotTitle: String = intent.extras?.getString("spotTitle") ?: ""
 
          viewModel.getSurfespots().observe(this) {
              val strand = it.list[1]
