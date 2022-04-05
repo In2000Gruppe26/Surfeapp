@@ -16,6 +16,10 @@ import java.security.AccessController.getContext
 import kotlin.coroutines.coroutineContext
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.github.kittinunf.fuel.core.Headers
+import com.github.kittinunf.fuel.core.ResponseDeserializable
+import com.github.kittinunf.fuel.coroutines.awaitStringResponse
+import org.json.JSONObject
 
 import java.io.InputStream;
 import java.util.*
@@ -23,8 +27,22 @@ import java.util.*
 class DataSource {
 //CLIENT ID FROST: af800469-bcec-450b-95c7-d7944ca2b73b
 //CLIENT SECRET FROST: 0f39f1cf-033e-43a5-9602-f5855725a638
+    private lateinit var token:Token
+
+    public fun onCreate(){
+        val url1 = "https://id.barentswatch.no/connect/token"
+        //val response1 = gson.fromJson(Fuel.post(url).awaitString(), Token::class.java)
+//ewkjgndqer87vc
+        val response1 = Fuel.post(url1).header(Headers.CONTENT_TYPE, "application/x-www-form-urlencoded").body("client_id=alfredlovgr1%40gmail.com%3Asurfeapp&scope=api&client_secret=ewkjgndqer87vc&grant_type=client_credentials").responseObject(Token.Deserializer()) { request, response, result ->
+            val (token, err) = result
+            println(token?.access_token)
+            println(response)
+        }
+
+    }
 
     public fun getConditions(spot:Surfespot):Conditions{
+        //println(token.access_token)
         // BESKRIVELSE
         // Når du bruker Surfespot.getConditions så kaller den egentlig bare på denne
 
@@ -43,11 +61,10 @@ class DataSource {
         var conditions:Conditions = Conditions(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F)
         runBlocking {
             try {
-                println(Fuel.get(url).awaitString())
+
                 val response = gson.fromJson(Fuel.get(url).awaitString(), Base::class.java)
 
                 val response2 = gson.fromJson(Fuel.get(url2).awaitString(), Base2::class.java)
-                println(response.toString())
 
                 val wavesize:Float? = response.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_surface_wave_height
                 val currentspeed:Float? = response.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_water_speed
@@ -110,6 +127,7 @@ class DataSource {
             }
             k++
         }
+        println(probabilities.toString())
         return bestGuess + 1
     }
 
@@ -187,5 +205,11 @@ data class Timeseries5905723(val time: String?, val data: Data2?)
 
 data class Units2(val air_temperature: String?, val precipitation_amount: String?, val precipitation_rate: String?, val relative_humidity: String?, val wind_from_direction: String?, val wind_speed: String?, val wind_speed_of_gust: String?)
 
+data class Token(val access_token: String?, val token_type: String?, val expires_in: Number?){
+    //User Deserializer
+    class Deserializer : ResponseDeserializable<Token> {
+        override fun deserialize(content: String) = Gson().fromJson(content, Token::class.java)
+    }
+}
 
 // result generated from /json
