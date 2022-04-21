@@ -34,20 +34,30 @@ class SpotActivity : AppCompatActivity() {
          val rating = findViewById<RatingBar>(R.id.rating1)
 
          val spotTitle: String = intent.extras?.getString("spotTitle") ?: ""
-
+         //VIKTIG: FIKSE SÅ DEN FINNER RIKTIG SPOT
          viewModel.getSurfespots().observe(this) {
-             val strand = it.list[1]
-             val ratingRes = strand.getRating()
-             rating.rating = ratingRes.toFloat()
-             tekstNavn.text = strand.name
-             val cond = strand.getConditions()
-             tekstBolge1.text = cond.waveSize.toString()
-             tekstBolge2.text = cond.currentSpeed.toString()
-             tekstBolge3.text = cond.currentDirection.toString()
-             tekstVind1.text = cond.wind_speed.toString()
-             tekstVind2.text = cond.wind_from_direction.toString()
-             tekstTemp.text = cond.air_temperature.toString()
-             tekstBes.text = it.list[0].description.toString()
+             var strand:Surfespot
+             for (i in it.list){
+                 println(i.name)
+                 println(spotTitle)
+                 if (i.name.equals(spotTitle.dropLast(6))){
+
+                     strand = i
+                     val ratingRes = strand.getRating()
+                     rating.rating = ratingRes.toFloat()
+                     tekstNavn.text = strand.name
+                     val cond = strand.getConditions()
+                     tekstBolge1.text = cond.waveSize.toString()
+                     tekstBolge2.text = cond.currentSpeed.toString()
+                     tekstBolge3.text = cond.currentDirection.toString()
+                     tekstVind1.text = cond.wind_speed.toString()
+                     tekstVind2.text = cond.wind_from_direction.toString()
+                     tekstTemp.text = cond.air_temperature.toString()
+                     tekstBes.text = strand.description.toString()
+                 }
+             }
+
+
          }
 
 

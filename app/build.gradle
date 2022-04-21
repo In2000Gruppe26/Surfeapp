@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -106,7 +107,7 @@ dependencies {
     kapt "com.android.databinding:compiler:3.1.4"
 
     //drawer view (slide in menu)
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     implementation 'androidx.cardview:cardview:1.0.0'

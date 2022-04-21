@@ -1,28 +1,18 @@
 package com.example.surfeapp
 
-import android.location.Location
-import android.location.LocationManager
+import android.content.Context
+import com.example.surfeapp.MainActivity.Companion.tokenSecret
 import com.github.kittinunf.fuel.Fuel
+import com.github.kittinunf.fuel.core.Headers
+import com.github.kittinunf.fuel.core.ResponseDeserializable
+import com.github.kittinunf.fuel.core.awaitResponse
+import com.github.kittinunf.fuel.coroutines.awaitResponse
 import com.github.kittinunf.fuel.coroutines.awaitString
 import com.google.gson.Gson
 import kotlinx.coroutines.runBlocking
-import java.io.IOException
-import kotlin.math.absoluteValue
-import kotlin.math.exp
-import android.content.Context
-import androidx.core.content.ContentProviderCompat.requireContext
-import java.security.AccessControlContext
-import java.security.AccessController.getContext
-import kotlin.coroutines.coroutineContext
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.github.kittinunf.fuel.core.Headers
-import com.github.kittinunf.fuel.core.ResponseDeserializable
-import com.github.kittinunf.fuel.coroutines.awaitStringResponse
 import org.json.JSONObject
-
-import java.io.InputStream;
-import java.util.*
+import java.io.IOException
+import kotlin.math.exp
 
 class DataSource {
 //CLIENT ID FROST: af800469-bcec-450b-95c7-d7944ca2b73b
@@ -30,14 +20,6 @@ class DataSource {
     private lateinit var token:Token
 
     public fun onCreate(){
-        val url1 = "https://id.barentswatch.no/connect/token"
-        //val response1 = gson.fromJson(Fuel.post(url).awaitString(), Token::class.java)
-//ewkjgndqer87vc
-        val response1 = Fuel.post(url1).header(Headers.CONTENT_TYPE, "application/x-www-form-urlencoded").body("client_id=alfredlovgr1%40gmail.com%3Asurfeapp&scope=api&client_secret=ewkjgndqer87vc&grant_type=client_credentials").responseObject(Token.Deserializer()) { request, response, result ->
-            val (token, err) = result
-            println(token?.access_token)
-            println(response)
-        }
 
     }
 
@@ -76,11 +58,13 @@ class DataSource {
                 val wind_from_direction = response2.properties?.timeseries?.get(0)?.data?.instant?.details?.wind_from_direction
 
                 conditions = Conditions(wavesize, currentspeed, currentdirection, air_temperature, precipitation_rate, wind_speed, wind_from_direction)
+                println(conditions.toString())
+                println(spot.toString())
             } catch(exception: Exception) {
                 println("A network request exception was thrown: ${exception.message}")
             }
         }
-        println(conditions.toString())
+
         return conditions
     }
 
@@ -131,11 +115,34 @@ class DataSource {
         return bestGuess + 1
     }
 
-    public fun getSpots(context: Context): Spots? {
+    public suspend fun getSpots(context: Context): Spots? {
         // BESKRIVELSE
         // Kall på denne funksjonen for å få en liste med alle surfespot-objekte
-        val jsonString: String
+        println("TEST")
         val gson = Gson()
+        if(tokenSecret.isNullOrEmpty()) {
+            val url1 = "https://id.barentswatch.no/connect/token"
+            //val response1 = gson.fromJson(Fuel.post(url).awaitString(), Token::class.java)
+//ewkjgndqer87vc
+            val (request, response, result) =
+                Fuel.post(url1).header(Headers.CONTENT_TYPE, "application/x-www-form-urlencoded")
+                    .body("client_id=alfredlovgr1%40gmail.com%3Asurfeapp&scope=api&client_secret=ewkjgndqer87vc&grant_type=client_credentials")
+                    .responseString()
+            val (token, err) = result
+            tokenSecret = gson.fromJson(token, Token::class.java).access_token.toString()
+
+            val gson = Gson()
+            val body = Base3("2022-04-14T15:00:00Z", listOf(RoutePoints595846129(68.2687586, 13.5810711, "2022-04-14T15:00:00Z", "2022-04-14T15:00:00Z")))
+            val json = gson.toJson(body)
+            val answer = JSONObject("""{ "forecastDatetime": "2022-04-14T15:06:58.073Z","routePoints": [ {"lat": 0,"lon": 0,"passingTime": "2022-04-14T15:06:58.073Z","forecastDatetime": "2022-04-14T15:06:58.073Z" }]}""")
+
+            println(Fuel.post("https://www.barentswatch.no/bwapi/v1/geodata/waveforecast/route")
+                .body(answer.toString()).appendHeader("Authorization", "bearer $tokenSecret" as Any).appendHeader("Accept", "application/json").appendHeader("Content-Type", "text/json")
+                .responseString())
+            //println(Fuel.get("https://www.barentswatch.no/bwapi/v2/geodata/waveforecast/fairway").appendHeader("Authorization", "bearer $tokenSecret" as Any).responseString())
+        }
+
+        val jsonString: String
 
         try {
             jsonString = context.assets.open("surfespots.json").bufferedReader().use { it.readText() }
@@ -213,3 +220,7 @@ data class Token(val access_token: String?, val token_type: String?, val expires
 }
 
 // result generated from /json
+
+data class Base3(val forecastDatetime: String?, val routePoints: List<RoutePoints595846129>?)
+
+data class RoutePoints595846129(val lat: Number?, val lon: Number?, val passingTime: String?, val forecastDatetime: String?)
