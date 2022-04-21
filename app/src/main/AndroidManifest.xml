@@ -14,6 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Surfeapp">
         <activity
+            android:name=".Splash_screen"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Nybegynner"
             android:exported="false" />
         <activity
@@ -34,11 +43,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
