@@ -1,32 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".OmSiden">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="177dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="330dp"
-        android:layout_height="508dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="78dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="45sp"
+            android:text="Om oss" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="50dp"
+            android:text="På Surfespots kan surfere fra alle nivåer finne ut om det er gode eller dårlige surfeforhold. Appen viser hvilke steder i Norge man kan surfe på, samt hvordan forholdene er akkurat her og nå. "
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="168dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="50dp"
+            android:text="Er du nybegynner finnes det en enkel veileder på hva du bør tenke over før din første surfetur. Du vil også finne tips og triks for en best mulig surfeopplevelse! Hvis du ønsker å være helt oppe med de profesjonelle finnes det også en stikkords guide."
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="50dp"
+            android:text="Surfespot er et samarbeid mellom institutt for informatikk og Meteorologisk institutt ved universitetet i Oslo. Utviklingsteamet består av seks informatikk studenter. "
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="50dp"
+            android:text="Vår oppgave er å bidra til at våre brukere enkelt kan hente inn data om surfeforhold. Vi ønsker å gi så troverdig data som mulig slik at surferne er klare for en dag på sjøen."
+            android:textSize="30sp" />
+    </LinearLayout>
+
+</ScrollView>
