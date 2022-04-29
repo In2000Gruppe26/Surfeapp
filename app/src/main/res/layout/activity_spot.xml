@@ -104,9 +104,9 @@
 
                             <ImageView
                                 android:layout_width="70dp"
-                                android:layout_height="50dp"
+                                android:layout_height="60dp"
                                 android:src="@drawable/wave_clipart"
-                                android:layout_marginRight="140dp">
+                                android:layout_marginRight="120dp">
 
                             </ImageView>
 
@@ -119,32 +119,86 @@
                             android:orientation="vertical"
                             >
 
-                            <TextView
-                                android:id="@+id/bolgeTekst1"
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Sett inn"
-                                android:textSize="15dp">
+                                android:orientation="horizontal">
 
-                            </TextView>
+                                <TextView
+                                    android:id="@+id/fbolgeTekst1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bølgehøyde:"
+                                    android:textSize="15dp"
+                                    android:layout_marginRight="5dp">
 
-                            <TextView
-                                android:id="@+id/bolgeTekst2"
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/bolgeTekst1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sett inn"
+                                    android:textSize="15dp">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Sett inn"
-                                android:textSize="15dp">
+                                android:orientation="horizontal">
 
-                            </TextView>
+                                <TextView
+                                    android:id="@+id/fbolgeTekst2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bølgefart:"
+                                    android:textSize="15dp"
+                                    android:layout_marginRight="15dp">
 
-                            <TextView
-                                android:id="@+id/bolgeTekst3"
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/bolgeTekst2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sett inn"
+                                    android:textSize="15dp">
+
+                                </TextView>
+
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Sett inn"
-                                android:textSize="15dp">
+                                android:layout_height="wrap_content">
 
-                            </TextView>
+                                <TextView
+                                    android:id="@+id/fbolgeTekst3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Retning:"
+                                    android:textSize="15dp"
+                                    android:layout_marginRight="10dp">
+
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/bolgeTekst3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sett inn"
+                                    android:textSize="15dp">
+
+                                </TextView>
+
+                            </LinearLayout>
+
 
                         </LinearLayout>
 
@@ -174,10 +228,10 @@
 
 
                             <ImageView
-                                android:layout_width="60dp"
+                                android:layout_width="70dp"
                                 android:layout_height="40dp"
                                 android:src="@drawable/wind_clipart"
-                                android:layout_marginRight="150dp"
+                                android:layout_marginRight="120dp"
                                 android:layout_marginBottom="10dp">
 
                             </ImageView>
@@ -191,23 +245,59 @@
                             android:orientation="vertical"
                             >
 
-                            <TextView
-                                android:id="@+id/vindTekst1"
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Sett inn"
-                                android:textSize="15dp">
+                                android:orientation="horizontal">
 
-                            </TextView>
+                                <TextView
+                                    android:id="@+id/fvindTekst1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Vindfart: "
+                                    android:textSize="15dp"
+                                    android:layout_marginRight="10dp">
 
-                            <TextView
-                                android:id="@+id/vindTekst2"
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/vindTekst1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sett inn"
+                                    android:textSize="15dp">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Sett inn"
-                                android:textSize="15dp">
+                                android:orientation="horizontal">
 
-                            </TextView>
+                                <TextView
+                                    android:id="@+id/fvindTekst2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Retning: "
+                                    android:textSize="15dp"
+                                    android:layout_marginRight="10dp">
+
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/vindTekst2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sett inn"
+                                    android:textSize="15dp">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+
 
                         </LinearLayout>
 
@@ -228,7 +318,7 @@
                         android:orientation="horizontal">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="213dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
@@ -236,25 +326,49 @@
                             <ImageView
                                 android:layout_width="60dp"
                                 android:layout_height="40dp"
-                                android:src="@drawable/temp_clipart"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginRight="150dp"
-                                android:layout_marginBottom="15dp">
+                                android:layout_marginBottom="15dp"
+                                android:src="@drawable/temp_clipart">
 
                             </ImageView>
 
 
                         </LinearLayout>
 
-
-                        <TextView
-                            android:id="@+id/tempTekst"
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sett inn"
-                            android:textSize="15dp">
+                            android:orientation="horizontal">
 
-                        </TextView>
+                            <TextView
+                                android:id="@+id/tempTekst"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5"
+                                android:textSize="30dp">
+
+                            </TextView>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/grad"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:layout_marginTop="1dp"
+                                    android:text="o">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
