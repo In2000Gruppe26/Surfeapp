@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.surfeapp.databinding.ActivityMainBinding
@@ -41,6 +43,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+
+
 
         drawerLayout = findViewById(R.id.drawerLayout)
 
