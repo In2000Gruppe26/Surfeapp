@@ -33,14 +33,6 @@ class SpotActivity : AppCompatActivity() {
          val tekstBes = findViewById<TextView>(R.id.besTekst)
          val rating = findViewById<RatingBar>(R.id.rating1)
 
-         //for actionbar
-       //  supportActionBar?.apply {
-       //      setDisplayShowHomeEnabled(true)
-        //    setDisplayUseLogoEnabled(true)
-         //   setDisplayShowTitleEnabled(false)
-       //      setLogo(R.drawable.ferdig_logo)
-
-      //   }
 
          val spotTitle: String = intent.extras?.getString("spotTitle") ?: ""
          //VIKTIG: FIKSE SÅ DEN FINNER RIKTIG SPOT
