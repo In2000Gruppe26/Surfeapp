@@ -74,29 +74,32 @@ class DataSource {
         val waveSize:Float = conditions.waveSize?.toFloat() ?: 0.toFloat()
         val waveSpeed:Float = conditions.currentSpeed?.toFloat() ?: 0.toFloat()
 
-        var j = 13.8
+        var j = -0.5691
         var tot:Float = 0.0.toFloat()
         var i = j
-
+        
+        val B_1 = 1.4
+        val B_2 = -0.474
+        
         var probabilities = mutableListOf<Float>()
         for(a in 3..7){
             if(a > 3){
                 if(a == 7){
                     probabilities.add(a-3, 1 - tot)
                 }else if(a == 4){
-                    i = j + 1.5
-                    probabilities.add(a-3, (exp(i-3.130*waveSize-1.184*waveSpeed)/(1+exp(i-3.130*waveSize-1.184*waveSpeed))-exp(j-3.130*waveSize-1.184*waveSpeed)/(1+exp(j-3.130*waveSize-1.184*waveSpeed))).toFloat())
-                    tot = tot + (exp(i-3.130*waveSize-1.184*waveSpeed)/(1+exp(i-3.130*waveSize-1.184*waveSpeed))-exp(j-3.130*waveSize-1.184*waveSpeed)/(1+exp(j-3.130*waveSize-1.184*waveSpeed))).toFloat()
+                    i = j + 1.2
+                    probabilities.add(a-3, (exp(i-B_1*waveSize-B_2*waveSpeed)/(1+exp(i-B_1*waveSize-B_2*waveSpeed))-exp(j-B_1*waveSize-B_2*waveSpeed)/(1+exp(j-B_1*waveSize-B_2*waveSpeed))).toFloat())
+                    tot = tot + (exp(i-B_1*waveSize-B_2*waveSpeed)/(1+exp(i-B_1*waveSize-B_2*waveSpeed))-exp(j-B_1*waveSize-B_2*waveSpeed)/(1+exp(j-B_1*waveSize-B_2*waveSpeed))).toFloat()
                 }else{
-                    i = j + 2.5
-                    probabilities.add(a-3,(exp(i-3.130*waveSize-1.184*waveSpeed)/(1+exp(i-3.130*waveSize-1.184*waveSpeed))-exp(j-3.130*waveSize-1.184*waveSpeed)/(1+exp(j-3.130*waveSize-1.184*waveSpeed))).toFloat())
-                    tot = tot + (exp(i-3.130*waveSize-1.184*waveSpeed)/(1+exp(i-3.130*waveSize-1.184*waveSpeed))-exp(j-3.130*waveSize-1.184*waveSpeed)/(1+exp(j-3.130*waveSize-1.184*waveSpeed))).toFloat()
+                    i = j + 1.1
+                    probabilities.add(a-3,(exp(i-B_1*waveSize-B_2*waveSpeed)/(1+exp(i-B_1*waveSize-B_2*waveSpeed))-exp(j-B_1*waveSize-B_2*waveSpeed)/(1+exp(j-B_1*waveSize-B_2*waveSpeed))).toFloat())
+                    tot = tot + (exp(i-B_1*waveSize-B_2*waveSpeed)/(1+exp(i-B_1*waveSize-B_2*waveSpeed))-exp(j-B_1*waveSize-B_2*waveSpeed)/(1+exp(j-B_1*waveSize-B_2*waveSpeed))).toFloat()
 
                 }
             }else{
                 i = j
-                probabilities.add(a-3, (exp(i-3.130*waveSize-1.184*waveSpeed)/(1+exp(i-3.130*waveSize-1.184*waveSpeed))).toFloat())
-                tot = tot + (exp(i-3.130*waveSize-1.184*waveSpeed)/(1+exp(i-3.130*waveSize-1.184*waveSpeed))).toFloat()
+                probabilities.add(a-3, (exp(i-B_1*waveSize-B_2*waveSpeed)/(1+exp(i-B_1*waveSize-B_2*waveSpeed))).toFloat())
+                tot = tot + (exp(i-B_1*waveSize-B_2*waveSpeed)/(1+exp(i-B_1*waveSize-B_2*waveSpeed))).toFloat()
             }
             j = i
         }

@@ -1,13 +1,12 @@
 package com.example.surfeapp
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.activity.viewModels
-import org.w3c.dom.Text
+import androidx.appcompat.app.AppCompatActivity
+import kotlin.math.abs
 
 
 class SpotActivity : AppCompatActivity() {
@@ -27,6 +26,7 @@ class SpotActivity : AppCompatActivity() {
          val tekstBolge1 = findViewById<TextView>(R.id.bolgeTekst1)
          val tekstBolge2 = findViewById<TextView>(R.id.bolgeTekst2)
          val tekstBolge3 = findViewById<TextView>(R.id.bolgeTekst3)
+         val retning = findViewById<ImageView>(R.id.retning)
          val tekstVind1 = findViewById<TextView>(R.id.vindTekst1)
          val tekstVind2 = findViewById<TextView>(R.id.vindTekst2)
          val tekstTemp = findViewById<TextView>(R.id.tempTekst)
@@ -50,10 +50,21 @@ class SpotActivity : AppCompatActivity() {
                      tekstBolge1.text = cond.waveSize.toString()
                      tekstBolge2.text = cond.currentSpeed.toString()
                      tekstBolge3.text = cond.currentDirection.toString()
+
                      tekstVind1.text = cond.wind_speed.toString()
                      tekstVind2.text = cond.wind_from_direction.toString()
                      tekstTemp.text = cond.air_temperature.toString()
                      tekstBes.text = strand.description.toString()
+                     fun degToW(num: Float): String{
+                         val direction = abs(num)
+                         val index = ((direction/22.5)+.5).toInt()
+                         val arr = arrayOf("N","NNØ","NØ","ØNØ","Ø","ØSØ", "SØ", "SSØ","S","SSV","SV","VSV","V","VNV","NV","NNV")
+                         return(arr[(index % 16)])
+                     }
+
+                     tekstBolge3.text = degToW(cond.currentDirection ?: 0f)
+                     
+                     retning.rotation = cond.currentDirection ?: 0f
                  }
              }
 

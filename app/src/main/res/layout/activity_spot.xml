@@ -200,6 +200,12 @@
                             </LinearLayout>
 
 
+                            <ImageView
+                                android:id="@+id/retning"
+                                android:layout_width="match_parent"
+                                android:layout_height="24dp"
+                                app:srcCompat="@drawable/arrow" />
+
                         </LinearLayout>
 
 

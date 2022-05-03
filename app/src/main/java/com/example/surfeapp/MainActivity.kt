@@ -2,9 +2,15 @@ package com.example.surfeapp
 
 //import android.databinding.DataBindingUtil
 
+import android.app.SearchManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.widget.Toast
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import android.widget.SearchView
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -34,6 +40,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
 
     private var myMarker: Marker? = null
 
+    lateinit var searchView: SearchView
+    lateinit var listView: ListView
+    lateinit var list: ArrayList<String>
+    lateinit var adapter: ArrayAdapter<*>
+
     companion object {
         var tokenSecret: String? = null
     }
@@ -54,8 +65,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         actionBarToggle.syncState()
-
-        navView = findViewById(R.id.navView)
 
         /*
         navView.setNavigationItemSelectedListener { menuItem ->
@@ -151,5 +160,17 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         startActivity(intent)
     }
 
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.options_menu, menu)
+
+        // Associate searchable configuration with the SearchView
+        /*val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        (menu.findItem(R.id.search).actionView as SearchView).apply {
+            setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        }*/
+
+        return true
+    }
 
 }
