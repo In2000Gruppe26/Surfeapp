@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">Surfeapp</string>
     <string name="nybegynner">Nybegynner?</string>
+    <string name="n1">Before you start surfing, you must know this: surfing is one of the most difficult and complex sports in the world. Think about it. Not one wave is the same, so your playground is constantly changing. Elements such as wind, tides and swells are affecting the waves you surf differently every single day.</string>
+    <string name="n2">Choosing the right surfboard will completely change the experience. It’s not about having the “brand new model”. It’s about having the right volume and rocker. The volume is the measurement of how much flotation the board has. It’s a function of length, width and thickness.</string>
+    <string name="n3">some spots can be perfect to learn on some days, and on other days only be good for experts. It all depends on the wave conditions.</string>
+    <string name="n4">As seen on point #1, surfing is one of the most complex and technical sports in the world. Imagine learning the wrong basic techniques and then having to “unlearn” your bad habits before you can continue your progression.</string>
+    <string name="n5">There are many, many rules to go by in surfing: don’t paddle inside, don’t drop in, don’t snake, don’t ditch your surfboard, and so on. It may sound like Chinese when you are new to the sport.</string>
+    <string name="o1">På Surfespots kan surfere fra alle nivåer finne ut om det er gode eller dårlige surfeforhold. Appen viser hvilke steder i Norge man kan surfe på, samt hvordan forholdene er akkurat her og nå.</string>
+    <string name="o2">Er du nybegynner finnes det en enkel veileder på hva du bør tenke over før din           første surfetur. Du vil også finne tips og triks for en best mulig surfeopplevelse! Hvis du ønsker å være helt oppe med de profesjonelle finnes det også en stikkords guide.</string>
+    <string name="o3">Surfespot er et samarbeid mellom institutt for informatikk og Meteorologisk institutt ved universitetet i Oslo. Utviklingsteamet består av seks informatikk studenter.</string>
+    <string name="o4">Vår oppgave er å bidra til at våre brukere enkelt kan hente inn data om surfeforhold. Vi ønsker å gi så troverdig data som mulig slik at surferne er klare for en dag på sjøen.</string>
+    <string name="o5">Meteorologisk institutt er ansvarlige for datagrunnlaget, og utviklingsteamet i Surfespot for presentasjon, design og innhold levert til brukerne.
+</string>
+
+
+
 </resources>
