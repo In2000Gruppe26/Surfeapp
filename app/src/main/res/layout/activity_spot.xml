@@ -26,7 +26,7 @@
         android:id="@+id/rating1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="?android:attr/ratingBarStyleSmall"
+        style="?android:attr/ratingBarStyleIndicator"
         android:numStars="5"
         android:stepSize="1"
         android:isIndicator="true"
@@ -188,23 +188,36 @@
 
                                 </TextView>
 
-                                <TextView
-                                    android:id="@+id/bolgeTekst3"
+                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Sett inn"
-                                    android:textSize="15dp">
+                                    android:orientation="vertical">
 
-                                </TextView>
+                                    <TextView
+                                        android:id="@+id/bolgeTekst3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Sett inn"
+                                        android:textSize="15dp">
+
+                                    </TextView>
+
+                                    <ImageView
+                                        android:id="@+id/retning"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="24dp"
+                                        app:srcCompat="@drawable/arrow" />
+
+                                </LinearLayout>
+
+
+
+
 
                             </LinearLayout>
 
 
-                            <ImageView
-                                android:id="@+id/retning"
-                                android:layout_width="match_parent"
-                                android:layout_height="24dp"
-                                app:srcCompat="@drawable/arrow" />
+
 
                         </LinearLayout>
 
