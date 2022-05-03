@@ -36,8 +36,8 @@ class SpotActivity : AppCompatActivity() {
          //for actionbar
          supportActionBar?.apply {
              setDisplayShowHomeEnabled(true)
-             setDisplayUseLogoEnabled(true)
-             setDisplayShowTitleEnabled(false)
+            setDisplayUseLogoEnabled(true)
+            setDisplayShowTitleEnabled(false)
              setLogo(R.drawable.ferdig_logo)
 
          }
