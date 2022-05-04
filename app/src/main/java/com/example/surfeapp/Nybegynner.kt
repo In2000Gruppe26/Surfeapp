@@ -1,5 +1,7 @@
 package com.example.surfeapp
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -11,6 +13,7 @@ class Nybegynner : AppCompatActivity() {
         val actionbar = supportActionBar
         //set actionbar title
         actionbar!!.title = "Nybegynner?"
+        supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FFA1DBF6")))
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
