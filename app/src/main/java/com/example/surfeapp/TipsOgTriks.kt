@@ -14,7 +14,7 @@ class TipsOgTriks : AppCompatActivity() {
         val actionbar = supportActionBar
         //set actionbar title
         actionbar!!.title = "Tips og triks"
-        supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FFA1DBF6")))
+        //supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FFA1DBF6")))
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
