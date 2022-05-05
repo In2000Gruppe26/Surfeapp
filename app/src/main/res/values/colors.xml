@@ -10,4 +10,10 @@
     <color name="end1">#3aa8c1</color>
     <color name="start1">#68a0b0</color>
     <color name="transparent">#00000000</color>
+    <color name="primary">#2b3c4f</color>
+    <color name="primary_light">#55667b</color>
+    <color name="primary_dark">#021627</color>
+    <color name="secondary">#b6d4e8</color>
+    <color name="secondary_light">#e9ffff</color>
+    <color name="secondary_dark">#86a3b6</color>
 </resources>
