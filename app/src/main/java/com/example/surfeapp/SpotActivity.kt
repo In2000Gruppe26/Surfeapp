@@ -56,7 +56,7 @@ class SpotActivity : AppCompatActivity() {
 
                      tekstVind2.text = cond.wind_from_direction.toString()
 
-                     tekstTemp.text = cond.air_temperature.toString()  + " C"
+                     tekstTemp.text = cond.air_temperature.toString()
                      tekstBes.text = strand.description.toString()
                      fun degToW(num: Float): String{
                          val direction = abs(num)

@@ -17,7 +17,7 @@
         android:textStyle="bold"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         android:layout_marginBottom="15dp">
 
     </TextView>
@@ -385,6 +385,16 @@
                                 </TextView>
 
                             </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/celcius"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="1dp"
+                                android:text="C"
+                                android:textSize="28dp">
+
+                                </TextView>
 
 
                         </LinearLayout>
