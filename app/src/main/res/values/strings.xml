@@ -1,11 +1,17 @@
 <resources>
     <string name="app_name">Surfeapp</string>
     <string name="nybegynner">Nybegynner?</string>
-    <string name="n1">Before you start surfing, you must know this: surfing is one of the most difficult and complex sports in the world. Think about it. Not one wave is the same, so your playground is constantly changing. Elements such as wind, tides and swells are affecting the waves you surf differently every single day.</string>
-    <string name="n2">Choosing the right surfboard will completely change the experience. It’s not about having the “brand new model”. It’s about having the right volume and rocker. The volume is the measurement of how much flotation the board has. It’s a function of length, width and thickness.</string>
-    <string name="n3">some spots can be perfect to learn on some days, and on other days only be good for experts. It all depends on the wave conditions.</string>
-    <string name="n4">As seen on point #1, surfing is one of the most complex and technical sports in the world. Imagine learning the wrong basic techniques and then having to “unlearn” your bad habits before you can continue your progression.</string>
-    <string name="n5">There are many, many rules to go by in surfing: don’t paddle inside, don’t drop in, don’t snake, don’t ditch your surfboard, and so on. It may sound like Chinese when you are new to the sport.</string>
+    <string name="n1">Husk at surfing er en vanskelig og kompleks sport. Bølger og vind endrer seg stadig. Vær derfor forsiktig.</string>
+    <string name="n2">Velg et surfebrett med stort volum, gjerne et longboard eller softboard.</string>
+    <string name="n3">Ha alltid på leash rundt beinet. Da mister du ikke brettet.</string>
+    <string name="n4">Velg et surfested med lange bølger og hvor bølgene bryter i skum.</string>
+    <string name="n5">Om det blåser fralandsvind må du være ekstra forsiktig. Ikke gå lenger ut enn der du kan stå.</string>
+    <string name="n6">Start dagen tidlig. Da er det ofte færre aktive surfere og mindre vind.</string>
+    <string name="n7">Om det er mer enn 3 meter høye bølger, hold deg nærme land og ta bølgene der de bryter for andre gang. Om bølgene blir for store mister du kontrollen.</string>
+    <string name="n8">Ta rikelig med pauser!</string>
+    <string name="n9">Surfekurs er veldig nyttig! Her lærer du deg teknikk og etikett av noen som kan det!</string>
+    <string name="n10">Aldri gå med brettet horisontalt mot en bølge. Da kommer du til å få det opp i ansiktet. Gå med brettet vertikalt!</string>
+    <string name="n11">Lær deg surfe etiketten, sjekk ut siden tips og triks. </string>
     <string name="o1">På Surfespots kan surfere fra alle nivåer finne ut om det er gode eller dårlige surfeforhold. Appen viser hvilke steder i Norge man kan surfe på, samt hvordan forholdene er akkurat her og nå.</string>
     <string name="o2">Er du nybegynner finnes det en enkel veileder på hva du bør tenke over før din           første surfetur. Du vil også finne tips og triks for en best mulig surfeopplevelse! Hvis du ønsker å være helt oppe med de profesjonelle finnes det også en stikkords guide.</string>
     <string name="o3">Surfespot er et samarbeid mellom institutt for informatikk og Meteorologisk institutt ved universitetet i Oslo. Utviklingsteamet består av seks informatikk studenter.</string>
