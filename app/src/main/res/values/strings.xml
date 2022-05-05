@@ -16,9 +16,8 @@
     <string name="o2">Er du nybegynner finnes det en enkel veileder på hva du bør tenke over før din           første surfetur. Du vil også finne tips og triks for en best mulig surfeopplevelse! Hvis du ønsker å være helt oppe med de profesjonelle finnes det også en stikkords guide.</string>
     <string name="o3">Surfespot er et samarbeid mellom institutt for informatikk og Meteorologisk institutt ved universitetet i Oslo. Utviklingsteamet består av seks informatikk studenter.</string>
     <string name="o4">Vår oppgave er å bidra til at våre brukere enkelt kan hente inn data om surfeforhold. Vi ønsker å gi så troverdig data som mulig slik at surferne er klare for en dag på sjøen.</string>
-    <string name="o5">Meteorologisk institutt er ansvarlige for datagrunnlaget, og utviklingsteamet i Surfespot for presentasjon, design og innhold levert til brukerne.
-</string>
-
+    <string name="o5">Meteorologisk institutt er ansvarlige for datagrunnlaget, og utviklingsteamet i Surfespot for presentasjon, design og innhold levert til brukerne.</string>
+    <string name="Samarbeid">Samarbeid</string>
 
 
 </resources>

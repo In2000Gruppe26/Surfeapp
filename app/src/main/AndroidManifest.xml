@@ -24,12 +24,15 @@
         </activity>
         <activity
             android:name=".Nybegynner"
+            android:label="NYBEGYNNER"
             android:exported="false" />
         <activity
             android:name=".TipsOgTriks"
+            android:label="TIPS OG TRIKS"
             android:exported="false" />
         <activity
             android:name=".OmSiden"
+            android:label="OM OSS"
             android:exported="false" />
 
         <meta-data
