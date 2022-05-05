@@ -13,7 +13,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:layout_marginBottom="110dp"
             android:orientation="vertical">
 
@@ -44,7 +43,6 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
                     android:text="@string/Samarbeid"
-                    android:textAppearance="bold"
                     android:textColor="@color/black"
                     android:textSize="20dp" />
                 <TextView
@@ -67,7 +65,6 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
                     android:text="Mål"
-                    android:textAppearance="bold"
                     android:textColor="@color/black"
                     android:textSize="20dp" />
 
