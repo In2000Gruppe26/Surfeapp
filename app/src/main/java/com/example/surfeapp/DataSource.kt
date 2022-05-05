@@ -121,39 +121,16 @@ class DataSource {
     public suspend fun getSpots(context: Context): Spots? {
         // BESKRIVELSE
         // Kall på denne funksjonen for å få en liste med alle surfespot-objekte
-        println("TEST")
+
         val gson = Gson()
-        if(tokenSecret.isNullOrEmpty()) {
-            val url1 = "https://id.barentswatch.no/connect/token"
-            //val response1 = gson.fromJson(Fuel.post(url).awaitString(), Token::class.java)
-//ewkjgndqer87vc
-            val (request, response, result) =
-                Fuel.post(url1).header(Headers.CONTENT_TYPE, "application/x-www-form-urlencoded")
-                    .body("client_id=alfredlovgr1%40gmail.com%3Asurfeapp&scope=api&client_secret=ewkjgndqer87vc&grant_type=client_credentials")
-                    .responseString()
-            val (token, err) = result
-            tokenSecret = gson.fromJson(token, Token::class.java).access_token.toString()
-
-            val gson = Gson()
-            val body = Base3("2022-04-14T15:00:00Z", listOf(RoutePoints595846129(68.2687586, 13.5810711, "2022-04-14T15:00:00Z", "2022-04-14T15:00:00Z")))
-            val json = gson.toJson(body)
-            val answer = JSONObject("""{ "forecastDatetime": "2022-04-14T15:06:58.073Z","routePoints": [ {"lat": 0,"lon": 0,"passingTime": "2022-04-14T15:06:58.073Z","forecastDatetime": "2022-04-14T15:06:58.073Z" }]}""")
-
-            println(Fuel.post("https://www.barentswatch.no/bwapi/v1/geodata/waveforecast/route")
-                .body(answer.toString()).appendHeader("Authorization", "bearer $tokenSecret" as Any).appendHeader("Accept", "application/json").appendHeader("Content-Type", "text/json")
-                .responseString())
-            //println(Fuel.get("https://www.barentswatch.no/bwapi/v2/geodata/waveforecast/fairway").appendHeader("Authorization", "bearer $tokenSecret" as Any).responseString())
-        }
-
         val jsonString: String
-
         try {
             jsonString = context.assets.open("surfespots.json").bufferedReader().use { it.readText() }
             val response = gson.fromJson(jsonString, Spots_json::class.java)
             println(response.toString())
             var converted_response:MutableList<Surfespot> = mutableListOf()
             for (i in response.list){
-                val tmp_spot:Surfespot = Surfespot(i.id, i.name, Coordinates(i.latitude, i.longitude), i.description)
+                val tmp_spot:Surfespot = Surfespot(i.id, i.name, Coordinates(i.latitude, i.longitude), i.description, i.deep_description)
                 converted_response.add(tmp_spot)
             }
             val spots: Spots = Spots(converted_response)
@@ -185,7 +162,7 @@ data class Timeseries139117139(val time: String?, val data: Data?)
 
 data class Units(val sea_surface_wave_from_direction: String?, val sea_surface_wave_height: String?, val sea_water_speed: String?, val sea_water_temperature: String?, val sea_water_to_direction: String?)
 
-data class Surfespot_json(val id: Int, val name: String, val latitude: Double, val longitude: Double, val description: String?)
+data class Surfespot_json(val id: Int, val name: String, val latitude: Double, val longitude: Double, val description: String?, val deep_description: String?)
 
 data class Spots_json(val list: List<Surfespot_json>)
 

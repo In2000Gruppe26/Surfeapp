@@ -3,7 +3,7 @@ import android.location.Location
 
 data class Coordinates(val latitude: Double, val longitude: Double)
 
-data class Surfespot(val id: Int, val name: String, val coordinates: Coordinates, val description: String?)
+data class Surfespot(val id: Int, val name: String, val coordinates: Coordinates, val description: String?, val deep_description: String?)
     // BESKRIVELSE
     // Dette er 'Surfespot' objektet.
     // Hvert 'spot' har en id, et navn, en posisjon, og *kan* ha en beskrivelse
