@@ -38,7 +38,9 @@
         <activity
             android:name=".Nybegynner"
             android:label="NYBEGYNNER"
-            android:exported="false" />
+            android:exported="false"
+
+            />
         <activity
             android:name=".TipsOgTriks"
             android:label="TIPS OG TRIKS"
