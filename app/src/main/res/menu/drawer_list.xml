@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/secondary_light">
     <item
         android:id="@+id/nybegynner"
+        android:icon="@drawable/nybegynner"
         android:onClick="TilNybegynner"
-        android:title="Nybegynner?" />
+        android:title="Nybegynner?"
+        android:background="@color/secondary"/>
     <item
         android:id="@+id/tips"
         android:onClick="TilTipsOgTriks"
+        android:icon="@drawable/tips"
         android:title="Tips og triks" />
     <item
         android:id="@+id/om"
         android:onClick="TilOmSiden"
+        android:icon="@drawable/om"
         android:title="Om appen" />
 </menu>

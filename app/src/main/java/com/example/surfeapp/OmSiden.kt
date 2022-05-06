@@ -13,7 +13,7 @@ class OmSiden : AppCompatActivity() {
         val actionbar = supportActionBar
         //set actionbar title
         actionbar!!.title = "Om oss"
-        supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FFA1DBF6")))
+        //supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor()))
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)

@@ -6,15 +6,13 @@ import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
+import android.view.Menu
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.SearchView
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.surfeapp.databinding.ActivityMainBinding
@@ -39,6 +37,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
 
     private var myMarker: Marker? = null
 
+    lateinit var searchView: SearchView
+    lateinit var listView: ListView
+    lateinit var list: ArrayList<String>
+    lateinit var adapter: ArrayAdapter<*>
+
     companion object {
         var tokenSecret: String? = null
     }
@@ -59,8 +62,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         actionBarToggle.syncState()
-
-        navView = findViewById(R.id.navView)
 
         /*
         navView.setNavigationItemSelectedListener { menuItem ->
@@ -115,7 +116,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
                 val nameCords: String = it.list[i].name
                 val rating: Int = 1 //it.list[i].getRating()
                 val temp = LatLng(latMain, longMain)
-                mMap.addMarker(MarkerOptions().position(temp).title("$nameCords ($rating/5)").snippet(it.list[i].description).icon(
+                mMap.addMarker(MarkerOptions().position(temp).title("$nameCords").snippet(it.list[i].description).icon(
                     BitmapDescriptorFactory.fromResource(R.drawable.pin)))
                 i++
             }
@@ -155,6 +156,26 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         intent.putExtra("spotTitle", p0.title)
         startActivity(intent)
     }
+/*
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        if (Intent.ACTION_SEARCH == intent.action) {
+            val query = intent.getStringExtra(SearchManager.QUERY)
+            //now you can display the results
+        }
+    }*/
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.options_menu, menu)
+
+        // Associate searchable configuration with the SearchView
+        val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        (menu.findItem(R.id.search).actionView as SearchView).apply {
+            setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        }
+
+        return true
+    }
 
 }

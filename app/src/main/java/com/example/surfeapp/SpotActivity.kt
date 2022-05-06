@@ -41,27 +41,30 @@ class SpotActivity : AppCompatActivity() {
              for (i in it.list){
                  println(i.name)
                  println(spotTitle)
-                 if (i.name.equals(spotTitle.dropLast(6))){
+                 if (i.name.equals(spotTitle.dropLast(0))){
 
                      strand = i
                      val ratingRes = strand.getRating()
                      rating.rating = ratingRes.toFloat()
                      tekstNavn.text = strand.name
                      val cond = strand.getConditions()
-                     tekstBolge1.text = cond.waveSize.toString()
-                     tekstBolge2.text = cond.currentSpeed.toString()
+                     tekstBolge1.text = cond.waveSize.toString() + " m"
+                     tekstBolge2.text = cond.currentSpeed.toString() + " m/s"
                      tekstBolge3.text = cond.currentDirection.toString()
 
-                     tekstVind1.text = cond.wind_speed.toString()
+                     tekstVind1.text = cond.wind_speed.toString()  + " m/s"
+
                      tekstVind2.text = cond.wind_from_direction.toString()
-                     tekstTemp.text = cond.air_temperature.toString()
-                     tekstBes.text = strand.description.toString()
+
+                     tekstTemp.text = cond.air_temperature.toString()  + "°C"
+                     tekstBes.text = strand.deep_description.toString()
                      fun degToW(num: Float): String{
                          val direction = abs(num)
                          val index = ((direction/22.5)+.5).toInt()
                          val arr = arrayOf("N","NNØ","NØ","ØNØ","Ø","ØSØ", "SØ", "SSØ","S","SSV","SV","VSV","V","VNV","NV","NNV")
                          return(arr[(index % 16)])
                      }
+                     tekstVind2.text = degToW(cond.wind_from_direction ?: 0f)
 
                      tekstBolge3.text = degToW(cond.currentDirection ?: 0f)
                      

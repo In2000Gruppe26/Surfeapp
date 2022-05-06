@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Nybegynner">
+    tools:context=".OmSiden">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -13,143 +13,75 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="110dp"
             android:layout_marginBottom="110dp"
             android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/ferdig_logo"/>
+
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="@string/o1"
+                   android:layout_marginLeft="20dp"
+                   android:textColor="@color/black"
+                   android:textSize="20dp"/>
+
+
             <LinearLayout
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/m_bg"
-                android:orientation="horizontal"
-                android:padding="3dp">
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/o1"
-                        android:textColor="@color/white"
-                        android:textSize="17dp" />
-                </LinearLayout>
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/Samarbeid"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/o3"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/m_bg"
-                android:orientation="horizontal"
-                android:padding="3dp">
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:fontFamily="sans-serif-black"
+                    android:text="Mål"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/o2"
-                        android:textColor="@color/white"
-                        android:textSize="17dp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/m_bg"
-                android:orientation="horizontal"
-                android:padding="3dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:text="@string/o4"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/o3"
-                        android:textColor="@color/white"
-                        android:textSize="17dp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/m_bg"
-                android:orientation="horizontal"
-                android:padding="3dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/o4"
-                        android:textColor="@color/white"
-                        android:textSize="17dp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/m_bg"
-                android:orientation="horizontal"
-                android:padding="3dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginBottom="100dp"
-                        android:text="@string/o5"
-                        android:textColor="@color/white"
-                        android:textSize="17dp" />
-                </LinearLayout>
+                    android:layout_marginTop="20dp"
+                    android:text="Meteorologisk institutt er ansvarlige for datagrunnlaget, og utviklingsteamet i Surfespot for presentasjon, design og innhold levert til brukerne. "
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

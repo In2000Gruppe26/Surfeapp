@@ -14,7 +14,7 @@
             "latitude": "70.798719",
             "longitude": "29.26487",
             "description": "Sandstrand",
-            "deep_description": "Dette er en liten sandstrand. Det er lang vei til butikk og nærmeste overnattingssted "
+            "deep_description": "Dette er en liten sandstrand. Det er lang vei til butikk og nærmeste overnattingssted "
         },
         {
             "id": "3",
@@ -22,7 +22,7 @@
             "latitude": "58.8007305",
             "longitude": "5.5483482",
             "description": "Sandstrand",
-            "deep_description": "Dette er en lang sandstrand. Her holder Bore surfeskole til. De tilbyr kurs samt leie av utstyr. Her er det ingen matbutikk eller overnattingssted i nærheten. "
+            "deep_description": "Dette er en lang sandstrand. Her holder Bore surfeskole til. De tilbyr kurs samt leie av utstyr. Her er det ingen matbutikk eller overnattingssted i nærheten. "
         },
         {
             "id": "4",
@@ -38,7 +38,7 @@
             "latitude": "69.068591",
             "longitude": "15.525122",
             "description": "Steinete strand",
-            "deep_description": "Her går man ut fra steiner. Det er lang vei til nærmeste matbutikk og overnattingssted "
+            "deep_description": "Her går man ut fra steiner. Det er lang vei til nærmeste matbutikk og overnattingssted "
         },
         {
             "id": "6",
@@ -46,7 +46,7 @@
             "latitude": "62.1664637",
             "longitude": "5.1148224",
             "description": "Sandstrand",
-            "deep_description": "Dette er en liten sandstrand. Erviksanden camping ligger like i nærheten. Her er det lang vei til butikken "
+            "deep_description": "Dette er en liten sandstrand. Erviksanden camping ligger like i nærheten. Her er det lang vei til butikken "
         },
         {
             "id": "7",
@@ -54,7 +54,7 @@
             "latitude": "62.98273",
             "longitude": "7.152414",
             "description": "Sandstrand",
-            "deep_description": "Dette er en liten sandstrand. Her er det parkeringsplass rett i nærheten. Det lang vei til butikken og nærmeste overnattingssted "
+            "deep_description": "Dette er en liten sandstrand. Her er det parkeringsplass rett i nærheten. Det lang vei til butikken og nærmeste overnattingssted "
         },
         {
             "id": "8",
@@ -62,7 +62,7 @@
             "latitude": "62.3867226",
             "longitude": "5.8304103",
             "description": "Skjær",
-            "deep_description": "Her går man ut fra skjær. Det er lang vei til butikk og nærmeste overnattingssted "
+            "deep_description": "Her går man ut fra skjær. Det er lang vei til butikk og nærmeste overnattingssted "
         },
         {
             "id": "9",
@@ -70,7 +70,7 @@
             "latitude": "68.63866",
             "longitude": "14.432433",
             "description": "Steinstrand",
-            "deep_description": "Her går man ut fra skjær. Det er lang vei til butikk og nærmeste overnattingssted "
+            "deep_description": "Her går man ut fra skjær. Det er lang vei til butikk og nærmeste overnattingssted "
         },
         {
             "id": "10",
@@ -78,7 +78,7 @@
             "latitude": "58.067319",
             "longitude": "6.727291",
             "description": "Surfeskole/utleie",
-            "deep_description": "Dette er en lang sandstrand. Her holder Lista Surfing til. De tilbyr kurs og utleie. Det er lang vei til butikken og nærmeste overnattingssted "
+            "deep_description": "Dette er en lang sandstrand. Her holder Lista Surfing til. De tilbyr kurs og utleie. Det er lang vei til butikken og nærmeste overnattingssted "
         },
         {
             "id": "11",
@@ -86,7 +86,7 @@
             "latitude": "58.84114",
             "longitude": "5.56069",
             "description": "Surfeskole/utleie",
-            "deep_description": "Dette er en lang sandstrand. Her holder surfschool til. De tilbyr kurs og utleie. Det er lang vei til nærmeste butikken og overnattingssted "
+            "deep_description": "Dette er en lang sandstrand. Her holder surfschool til. De tilbyr kurs og utleie. Det er lang vei til nærmeste butikken og overnattingssted "
         },
         {
             "id": "12",
@@ -110,7 +110,7 @@
             "latitude": "58.549514",
             "longitude": "5.675106",
             "description": "Steinstrand",
-            "deep_description": "Her får man ut fra en steinete strand. Det er lang vei til nærmeste matbutikk og overnattingssted "
+            "deep_description": "Her får man ut fra en steinete strand. Det er lang vei til nærmeste matbutikk og overnattingssted "
         },
         {
             "id": "15",
@@ -134,7 +134,7 @@
             "latitude": "66.948197",
             "longitude": "13.741238",
             "description": "Skjær",
-            "deep_description": "Her går man ut fra skjær. Det er lang vei til butikk og nærmeste overnattingssted "
+            "deep_description": "Her går man ut fra skjær. Det er lang vei til butikk og nærmeste overnattingssted "
         },
         {
             "id": "18",
@@ -150,7 +150,7 @@
             "latitude": "58.981309",
             "longitude": "9.98176",
             "description": "Ut fra steinete molo",
-            "deep_description": "Her går man ut fra en molo. Det er lang vei til butikk og nærmeste overnattingssted "
+            "deep_description": "Her går man ut fra en molo. Det er lang vei til butikk og nærmeste overnattingssted "
         },
         {
             "id": "20",
@@ -158,7 +158,7 @@
             "latitude": "70.4201376",
             "longitude": "30.7908117",
             "description": "Liten sandstrand",
-            "deep_description": "Dette er en lang sandstrand. Det er lang vei til butikk og nærmeste overnattingssted "
+            "deep_description": "Dette er en lang sandstrand. Det er lang vei til butikk og nærmeste overnattingssted "
         },
         {
             "id": "21",
@@ -198,7 +198,7 @@
             "latitude": "58.966499",
             "longitude": "9.850051",
             "description": "Steinstrand",
-            "deep_description": "Dette er en steinstrand med store steiner. Det er lang vei til butikk og nærmeste overnattingssted "
+            "deep_description": "Dette er en steinstrand med store steiner. Det er lang vei til butikk og nærmeste overnattingssted "
         },
         {
             "id": "26",
@@ -206,7 +206,7 @@
             "latitude": "67.203201",
             "longitude": "14.358142",
             "description": "Sandstrand",
-            "deep_description": "Dette er en lang sandstrand. Det er lang vei til butikk og nærmeste overnattingssted "
+            "deep_description": "Dette er en lang sandstrand. Det er lang vei til butikk og nærmeste overnattingssted "
         },
         {
             "id": "27",
@@ -214,7 +214,7 @@
             "latitude": "68.756938",
             "longitude": "14.473932",
             "description": "Sandstrand",
-            "deep_description": "Dette er en kort sandstrand. Det er lang vei til butikk og nærmeste overnattingssted "
+            "deep_description": "Dette er en kort sandstrand. Det er lang vei til butikk og nærmeste overnattingssted "
         },
         {
             "id": "28",
@@ -246,7 +246,7 @@
             "latitude": "70.188634",
             "longitude": "30.347314",
             "description": "Sandstrand",
-            "deep_description": "Dette er en kort sandstrand. Det er lang vei til butikk og nærmeste overnattingssted "
+            "deep_description": "Dette er en kort sandstrand. Det er lang vei til butikk og nærmeste overnattingssted "
         },
         {
             "id": "32",
@@ -262,7 +262,7 @@
             "latitude": "59.025138",
             "longitude": "11.017506",
             "description": "Sandstrand",
-            "deep_description": "Dette er en kort sandstrand. Det er lang vei til butikk og nærmeste overnattingssted "
+            "deep_description": "Dette er en kort sandstrand. Det er lang vei til butikk og nærmeste overnattingssted "
         },
         {
             "id": "34",
@@ -270,7 +270,7 @@
             "latitude": "68.2687586",
             "longitude": "13.5810711",
             "description": "Surfeskole/utleie",
-            "deep_description": "Dette er en lang sandstrand. Her holder Lofoten surfesenter til. De tilbyr kurs og utleie av utstyr. Unstad Arctic Surf ligger rett i nærheten og tilbyr overnatting. Det er lang vei til nærmeste matbutikk. "
+            "deep_description": "Dette er en lang sandstrand. Her holder Lofoten surfesenter til. De tilbyr kurs og utleie av utstyr. Unstad Arctic Surf ligger rett i nærheten og tilbyr overnatting. Det er lang vei til nærmeste matbutikk. "
         },
         {
             "id": "35",
@@ -282,6 +282,3 @@
         }
     ]
 }
-
-
-
