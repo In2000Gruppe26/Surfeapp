@@ -13,7 +13,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="110dp"
+            android:layout_marginBottom="50dp"
             android:orientation="vertical">
 
             <ImageView
@@ -22,13 +22,14 @@
                 android:src="@drawable/ferdig_logo"/>
 
 
-               <TextView
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:text="@string/o1"
-                   android:layout_marginLeft="20dp"
-                   android:textColor="@color/black"
-                   android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/roboto_light"
+                android:text="@string/o1"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
 
             <LinearLayout
@@ -41,16 +42,18 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
+                    android:fontFamily="@font/roboto_medium"
                     android:text="@string/Samarbeid"
                     android:textColor="@color/black"
                     android:textSize="20dp" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
                     android:text="@string/o3"
                     android:textColor="@color/black"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -63,7 +66,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
+                    android:fontFamily="@font/roboto_medium"
                     android:text="Mål"
                     android:textColor="@color/black"
                     android:textSize="20dp" />
@@ -71,14 +74,16 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
                     android:text="@string/o4"
                     android:textColor="@color/black"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_light"
                     android:text="Meteorologisk institutt er ansvarlige for datagrunnlaget, og utviklingsteamet i Surfespot for presentasjon, design og innhold levert til brukerne. "
                     android:textColor="@color/black"
                     android:textSize="20dp" />
