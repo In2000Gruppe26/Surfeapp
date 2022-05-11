@@ -61,4 +61,11 @@
     <style name="MenuFont">
         <item name="android:textSize">20dp</item>
     </style>
+
+    <style name="CustomRatingBarStyle" parent="Widget.AppCompat.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_waves</item>
+        <item name="android:minHeight">15dip</item>
+        <item name="android:maxHeight">47dip</item>
+    </style>
+
 </resources>

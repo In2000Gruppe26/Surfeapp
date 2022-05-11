@@ -52,6 +52,13 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
 
         setContentView(binding.root)
 
+        //actionbarlogo
+        supportActionBar?.apply {
+            setDisplayShowHomeEnabled(true)
+            setDisplayUseLogoEnabled(true)
+            setLogo(R.drawable.logo_5)
+        }
+
 
 
         drawerLayout = findViewById(R.id.drawerLayout)
