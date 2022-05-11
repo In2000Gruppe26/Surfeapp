@@ -164,7 +164,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Sett inn"
-                                    android:textSize="15dp">
+                                    android:textSize="15dp"
+                                    android:layout_marginLeft="7dp">
 
                                 </TextView>
 
@@ -190,7 +191,8 @@
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+                                    android:orientation="vertical"
+                                    android:layout_marginLeft="22dp">
 
                                     <TextView
                                         android:id="@+id/bolgeTekst3"
@@ -281,7 +283,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Sett inn"
-                                    android:textSize="15dp">
+                                    android:textSize="15dp"
+                                    android:layout_marginLeft="16dp">
 
                                 </TextView>
 
@@ -307,7 +310,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Sett inn"
-                                    android:textSize="15dp">
+                                    android:textSize="15dp"
+                                    android:layout_marginLeft="18dp">
 
                                 </TextView>
 
