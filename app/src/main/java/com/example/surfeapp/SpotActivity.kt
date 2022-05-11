@@ -26,6 +26,7 @@ class SpotActivity : AppCompatActivity() {
              setDisplayUseLogoEnabled(true)
              setLogo(R.drawable.logo_5)
          }
+         //ok
 
          val viewModel: SpotActivityViewModel by viewModels()
 
