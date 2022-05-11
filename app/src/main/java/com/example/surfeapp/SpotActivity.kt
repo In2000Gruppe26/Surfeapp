@@ -20,6 +20,13 @@ class SpotActivity : AppCompatActivity() {
 
          //Denne siden skal vise et valgt surfespot. (V)
 
+         //actionbarlogo
+         supportActionBar?.apply {
+             setDisplayShowHomeEnabled(true)
+             setDisplayUseLogoEnabled(true)
+             setLogo(R.drawable.logo_5)
+         }
+
          val viewModel: SpotActivityViewModel by viewModels()
 
          val tekstNavn = findViewById<TextView>(R.id.navnTekst)
