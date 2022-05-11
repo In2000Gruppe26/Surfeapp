@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:layout_marginBottom="20dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="@string/nyb_start" />
 
@@ -37,7 +37,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="30dp"
+                    android:layout_width="20dp"
                     android:layout_height="30dp"
                     android:src="@drawable/surfebrett_bullet"
                     android:layout_gravity="center"
@@ -58,7 +58,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="30dp"
+                    android:layout_width="20dp"
                     android:layout_height="30dp"
                     android:src="@drawable/surfebrett_bullet"
                     android:layout_gravity="center"
@@ -79,7 +79,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="30dp"
+                    android:layout_width="20dp"
                     android:layout_height="30dp"
                     android:src="@drawable/surfebrett_bullet"
                     android:layout_gravity="center"
@@ -100,7 +100,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="30dp"
+                    android:layout_width="20dp"
                     android:layout_height="30dp"
                     android:src="@drawable/surfebrett_bullet"
                     android:layout_gravity="center"
@@ -121,7 +121,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="30dp"
+                    android:layout_width="20dp"
                     android:layout_height="30dp"
                     android:src="@drawable/surfebrett_bullet"
                     android:layout_gravity="center"
@@ -141,7 +141,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="30dp"
+                    android:layout_width="20dp"
                     android:layout_height="30dp"
                     android:src="@drawable/surfebrett_bullet"
                     android:layout_gravity="center"
@@ -163,7 +163,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="30dp"
+                    android:layout_width="20dp"
                     android:layout_height="30dp"
                     android:src="@drawable/surfebrett_bullet"
                     android:layout_gravity="center"
@@ -185,7 +185,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="30dp"
+                    android:layout_width="20dp"
                     android:layout_height="30dp"
                     android:src="@drawable/surfebrett_bullet"
                     android:layout_gravity="center"
@@ -206,7 +206,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="30dp"
+                    android:layout_width="20dp"
                     android:layout_height="30dp"
                     android:src="@drawable/surfebrett_bullet"
                     android:layout_gravity="center"
@@ -228,7 +228,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="30dp"
+                    android:layout_width="20dp"
                     android:layout_height="30dp"
                     android:src="@drawable/surfebrett_bullet"
                     android:layout_gravity="center"
@@ -240,12 +240,6 @@
                     android:textSize="20dp"
                     android:text="@string/nyb10"/>
             </LinearLayout>
-
-
-
-
-
-
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
