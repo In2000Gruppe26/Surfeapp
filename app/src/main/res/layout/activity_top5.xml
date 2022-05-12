@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".top5">
+    tools:context=".Top5">
    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -35,6 +35,7 @@
                 android:orientation="vertical"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -44,22 +45,22 @@
                     android:fontFamily="@font/roboto_medium"
                     android:gravity="center"/>
                 <ImageView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="150dp"
-                    android:src="@drawable/hoddevik"/>
+                    android:src="@drawable/hoddevik" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:textSize="20dp"
-                    android:text="@string/Hoddevik_intro"/>
+                    android:text="@string/Hoddevik_intro"
+                    android:textSize="20dp" />
 
                 <Button
-                    android:id="@+id/Hoddevik"
+                    android:id="@+id/b1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:onClick="TilHoddevik"
+                    android:background="@color/transparent"
                     android:text="@string/les_mer"
                     android:textColor="@color/black"
                     android:textSize="10dp" />
@@ -80,9 +81,10 @@
                     android:fontFamily="@font/roboto_medium"
                     android:gravity="center"/>
                 <ImageView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="150dp"
-                    android:src="@drawable/jaeren"/>
+                    android:src="@drawable/jaeren" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -91,11 +93,10 @@
                     android:text="@string/Solastranden_intro"/>
 
                 <Button
-                    android:id="@+id/Solastranden"
+                    android:id="@+id/b2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:onClick="TilSolastranden"
+                    android:background="@color/transparent"
                     android:text="Les mer..."
                     android:textColor="@color/black"
                     android:textSize="10dp" />
@@ -116,9 +117,10 @@
                     android:fontFamily="@font/roboto_medium"
                     android:gravity="center"/>
                 <ImageView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="150dp"
-                    android:src="@drawable/unstad"/>
+                    android:src="@drawable/unstad" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -127,11 +129,10 @@
                     android:text="@string/Unstad_intro"/>
 
                 <Button
-                    android:id="@+id/Unstad"
+                    android:id="@+id/b3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:onClick="TilUnstad"
+                    android:background="@color/transparent"
                     android:text="Les mer..."
                     android:textColor="@color/black"
                     android:textSize="10dp" />
@@ -156,8 +157,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/alnes"
-                    android:layout_marginTop="-385dp"
-                    android:layout_marginBottom="-380dp"/>
+                    android:layout_marginTop="-388dp"
+                    android:layout_marginBottom="-375dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -167,11 +168,10 @@
                     android:text="Alnes Fyr ligger på vikingøya Giske utenfor Ålesund. Stranden som er kjent for gode forhold er en blanding av både stein og sand, så vær varsom!"/>
 
                 <Button
-                    android:id="@+id/Alnes"
+                    android:id="@+id/b4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:onClick="TilAlnes"
+                    android:background="@color/transparent"
                     android:text="Les mer..."
                     android:textColor="@color/black"
                     android:textSize="10dp" />
@@ -195,7 +195,8 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
-                    android:src="@drawable/hustadvika"/>
+                    android:src="@drawable/hustadvika" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -205,11 +206,10 @@
                     android:layout_marginBottom="20dp"/>
 
                 <Button
-                    android:id="@+id/Hustadvika"
+                    android:id="@+id/b5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:onClick="TilHustadvika"
+                    android:background="@color/transparent"
                     android:text="Les mer..."
                     android:textColor="@color/black"
                     android:textSize="10dp" />

@@ -30,7 +30,7 @@
             android:name=".Hoddevik"
             android:exported="false" />
         <activity
-            android:name=".top5"
+            android:name=".Top5"
             android:exported="false" />
 
         <activity
