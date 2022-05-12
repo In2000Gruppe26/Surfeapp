@@ -160,7 +160,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     }
 
     fun TilTop5(item: android.view.MenuItem) {
-        val intent = Intent(this, top5::class.java)
+        val intent = Intent(this, Top5::class.java)
         startActivity(intent)
     }
 
