@@ -7,9 +7,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import android.widget.SearchView
+import android.view.View
+import android.widget.*
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -42,6 +41,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     lateinit var list: ArrayList<String>
     lateinit var adapter: ArrayAdapter<*>
 
+    private lateinit var listView_search: ListView
+    private lateinit var emptyView: TextView
+    lateinit var spotList: Spots
     companion object {
         var tokenSecret: String? = null
     }
@@ -97,6 +99,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
+
+
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -127,6 +131,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
                     BitmapDescriptorFactory.fromResource(R.drawable.pin)))
                 i++
             }
+
         }
 
         viewModel1.fetchSurfespotsMain(applicationContext)
@@ -174,15 +179,41 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     }*/
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.options_menu, menu)
+        // Inflate the options menu from XML
+        val inflater = menuInflater
+        inflater.inflate(R.menu.options_menu, menu)
 
-        // Associate searchable configuration with the SearchView
+        // Get the SearchView and set the searchable configuration
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         (menu.findItem(R.id.search).actionView as SearchView).apply {
+            // Assumes current activity is the searchable activity
             setSearchableInfo(searchManager.getSearchableInfo(componentName))
+            setIconifiedByDefault(false) // Do not iconify the widget; expand it by default
         }
-
         return true
+/*
+        menuInflater.inflate(R.menu.options_menu, menu)
+        val search = menu.findItem(R.id.search)
+        val searchView = search.actionView as SearchView
+        searchView.queryHint = "Search"
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                listView_search.setVisibility(View.VISIBLE)
+                return false
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adapter.filter.filter(newText)
+                return true
+            }
+        })
+        searchView.setOnCloseListener(object : SearchView.OnCloseListener{
+            override fun onClose(): Boolean {
+                listView_search.setVisibility(View.GONE)
+                return true
+            }
+        })
+
+        return super.onCreateOptionsMenu(menu)*/
     }
 
 }

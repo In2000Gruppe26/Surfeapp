@@ -12,6 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_sslogo_round"
         android:supportsRtl="true"
+        android:largeHeap="true"
         android:theme="@style/Theme.Surfeapp">
         <activity
             android:name=".Hustadvika"
@@ -31,21 +32,7 @@
         <activity
             android:name=".top5"
             android:exported="false" />
-        <activity
-            android:name=".SearchResultsActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-            <!-- meta tag and intent filter go into results activity -->
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".SplashScreen"
             android:exported="true">
@@ -57,23 +44,30 @@
         </activity>
         <activity
             android:name=".Nybegynner"
-            android:exported="false"
-            android:label="NYBEGYNNER" />
+            android:label="NYBEGYNNER"
+            android:exported="false" />
         <activity
             android:name=".TipsOgTriks"
-            android:exported="false"
-            android:label="TIPS OG TRIKS" />
+            android:label="TIPS OG TRIKS"
+            android:exported="false" />
         <activity
             android:name=".OmSiden"
-            android:exported="false"
-            android:label="OM OSS" />
+            android:label="OM OSS"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+        <activity
+            android:name=".SearchResultsActivity"
+            android:exported="false"
+            android:launchMode="singleTop">
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".SpotActivity"
@@ -82,9 +76,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <meta-data
-                android:name="android.app.default_searchable"
-                android:value=".SearchResultsActivity" />
+            <meta-data android:name="android.app.default_searchable"
+                android:value=".SearchableActivity" />
         </activity>
     </application>
 
