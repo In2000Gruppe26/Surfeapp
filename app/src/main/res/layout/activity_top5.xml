@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".top5">
-   <!-- <ScrollView
+   <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -16,7 +16,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="5 Norske Surfeperler"
+                android:text="@string/_5_norske_surfeperler"
                 android:textSize="30dp"
                 android:gravity="center"
                 android:layout_marginTop="20dp"/>
@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="Den lange Norske kyst tilbyr rikelig med muligheter for surfing. Fra Jæren og helt til Lofoten finnes det endeløst med gode surfemuligheter. Det kan være vanskelig å velge hvor du vil prøve deg frem, så la SurfeSpot velge for deg da vel! Her kommer fem surfespots du sent vil glemme. "
+                android:text="@string/_5_intro"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"/>
@@ -52,13 +52,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:textSize="20dp"
-                    android:text="innhold1"/>
+                    android:text="@string/Hoddevik_intro"/>
+
                 <Button
+                    android:id="@+id/Hoddevik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
+                    android:onClick="TilHoddevik"
+                    android:text="@string/les_mer"
                     android:textColor="@color/black"
-                    android:text="Les mer..."
                     android:textSize="10dp" />
             </LinearLayout>
 
@@ -85,13 +88,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:textSize="20dp"
-                    android:text="innhold2"/>
+                    android:text="@string/Solastranden_intro"/>
+
                 <Button
+                    android:id="@+id/Solastranden"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
-                    android:textColor="@color/black"
+                    android:onClick="TilSolastranden"
                     android:text="Les mer..."
+                    android:textColor="@color/black"
                     android:textSize="10dp" />
             </LinearLayout>
 
@@ -118,13 +124,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:textSize="20dp"
-                    android:text="innhold3"/>
+                    android:text="@string/Unstad_intro"/>
+
                 <Button
+                    android:id="@+id/Unstad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
-                    android:textColor="@color/black"
+                    android:onClick="TilUnstad"
                     android:text="Les mer..."
+                    android:textColor="@color/black"
                     android:textSize="10dp" />
             </LinearLayout>
 
@@ -145,21 +154,26 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="150dp"
-                    android:src="@drawable/alnes" />
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/alnes"
+                    android:layout_marginTop="-385dp"
+                    android:layout_marginBottom="-380dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:textSize="20dp"
-                    android:text="innhold4"/>
+                    android:text="Alnes Fyr ligger på vikingøya Giske utenfor Ålesund. Stranden som er kjent for gode forhold er en blanding av både stein og sand, så vær varsom!"/>
+
                 <Button
+                    android:id="@+id/Alnes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
-                    android:textColor="@color/black"
+                    android:onClick="TilAlnes"
                     android:text="Les mer..."
+                    android:textColor="@color/black"
                     android:textSize="10dp" />
             </LinearLayout>
 
@@ -187,16 +201,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:textSize="20dp"
-                    android:text="innhold5"
+                    android:text="Alnes Fyr ligger på vikingøya Giske utenfor Ålesund. Stranden som er kjent for gode forhold er en blanding av både stein og sand, så vær varsom!"
                     android:layout_marginBottom="20dp"/>
+
                 <Button
+                    android:id="@+id/Hustadvika"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
-                    android:textColor="@color/black"
+                    android:onClick="TilHustadvika"
                     android:text="Les mer..."
+                    android:textColor="@color/black"
                     android:textSize="10dp" />
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>-->
+    </ScrollView>
 </RelativeLayout>

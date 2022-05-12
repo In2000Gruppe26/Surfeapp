@@ -18,6 +18,32 @@
     <string name="nyb8">Surfekurs er veldig nyttig! Her lærer du deg teknikk og etikett av noen som kan det!</string>
     <string name="nyb9">Aldri gå med brettet horisontalt mot en bølge. Da kommer du til å få det opp i ansiktet. Gå med brettet vertikalt!</string>
     <string name="nyb10">Lær deg surfe etiketten, sjekk ut siden tips og triks.</string>
+    <string name="hoddevik">Hoddevik</string>
+    <string name="Hoddevik_txt_1">Hoddevik ligger i Stad kommune sør for Ålesund. I den lille bygden finner vi en vakker og kjent sandstrand kalt for Hoddevikstranden. Å kjøre fra Ålesund tar i underkant av fire timer, men reisen er vel verdt det!</string>
+    <string name="Hoddevik_txt_2">Hoddevikstranden er omtrent en kilometer lang og har kanskje Nordens beste forhold for surfing. Bølgene har grunnet den vakre naturen en stabil, men spennende utforming, og egner seg for både nybegynnere og erfarne. Her kan det være svært befolket til tider, så husk å kommuniser med de rundt deg når du er ute blandt bølgene.</string>
+    <string name="Hoddevik_txt_3">I Hoddevik finnes det noen få muligheter for opphold på halvøya, så bobil eller camping er en svært vanlig løsning. Matbutikk er bare en liten kjøretur unna. Hoddevikstranden er nærmest obligatorisk å besøke om du skal på surfereise i Norge.</string>
+    <string name="Alnes_Fyr">Alnes Fyr</string>
+    <string name="Alnes_Fyr_txt_1">Alnes Fyr ligger på vikingøya Giske utenfor Ålesund. Stranden som er kjent for gode forhold er en blanding av både stein og sand, så vær varsom!</string>
+    <string name="Alnes_Fyr_txt_2">Alnes Fyr har fått navnet grunnet et bemerkelsesverdig fyrtårn som ligger på øya. Forholdene her er kjent for å variere stort, fra fantastiske surfeforhold til litt mer turgåer-vennlige forhold. Husk å sjekk Surfespots for informasjon om forhold på dagen!</string>
+    <string name="Alnes_Fyr_txt_3">Alnes Fyr er en fantastisk destinasjon av flere grunner. Det tar kun 20 minutter fra by til strand! Ålesund er bare et steinkast unna, såfremt du har en god kastearm. Det finnes bomuligheter og cafe på øya. Stort mer trenger du ikke. Dersom du blir skuffet av forholdene, finnes det heldigvis vakre fjellturer på øya, så her kjeder du deg aldri!</string>
+    <string name="_5_norske_surfeperler">5 Norske Surfeperler</string>
+    <string name="_5_intro">Den lange Norske kyst tilbyr rikelig med muligheter for surfing. Fra Jæren og helt til Lofoten finnes det endeløst med gode surfemuligheter. Det kan være vanskelig å velge hvor du vil prøve deg frem, så la SurfeSpot velge for deg da vel! Her kommer fem surfespots du sent vil glemme.</string>
+    <string name="hustadvika">Hustadvika</string>
+    <string name="Hustadvika_txt_1">Hustadvika er en liten og ny kommune i Møre og Romsdal. Her finnes mange utfordrende surfespots for de som er bekvemme med å surfe mot steinstrander. Langs Nordeneset Kyststi finner du de mest populære. Stay safe!</string>
+    <string name="Hustadvika_txt_2">Hustadvika er et helt rått sted å surfe på de kaldeste tidene av året, så husk tykk våtdrakt! Vi anbefaler september til april. Her er det også muligheter om sommeren, men med langt mindre vind og litt vel behagelige bølger.</string>
+    <string name="Hustadvika_txt_3">Hustadvika er bare 50 minutter unna Molde, så dette egner seg som en flott helgetur, eller som et lite pitstop på en lengre reise. Det er campingplasser 15 minutter sør for Hustadvika, men man kan jo bare telte på stranda?</string>
+    <string name="unstad">Unstad</string>
+    <string name="Unstad_txt_1">Unstad ligger i Vestvågøy kommune i Lofoten. Lofoten er kjent for sine godesurfeforhold, så her er det mye å velge mellom. Unstad er vår favoritt grunnet den idylliske naturen rundt. Ta en tur til Unstadstranden, stort vakrere blir det ikke.</string>
+    <string name="Unstad_txt_2">Unstadstranden har egen surfesjappe med muligheter for både utleie og surfetimer fra profesjonelle. Forholdene her er best på vintertid, så husk våtdrakt!</string>
+    <string name="Unstad_txt_3">Unstad har eget hotell dedikert til surfere! Plassen har fått internasjonal oppmerksomhet for både bølger og omgivelser. Her arrangeres det også internasjonale og lokale konkurranser. Kanskje du skal melde deg opp?</string>
+    <string name="solastranden">Solastranden</string>
+    <string name="Solastranden_txt_1">Solastranden ligger utenfor Stavanger - rett ved Sola flyplass, lett tilgjengelig med andre ord. Denne stranden er kanskje norges mest populære surfeplass og kommer ikke utenom vår top fem heller!</string>
+    <string name="Solastranden_txt_2">Solastranden er populær året rundt, men surfing er mest populært om vinteren. Stranden er en lang sandstrand med surfesjappe like ved. Solastranden er det perfekte stedet for en nybegynner, og er gjerne der nykommere forelsker seg i surfing.</string>
+    <string name="Solastranden_txt_3">Selv om forholdene kanskje ikke er blandt de gjeveste i Norge på høysesong, hører Solastranden hjemme i top fem av flere grunner. Her er det endeløst med bomuligheter og fargerikt byliv en liten busstur unna. Her kan surfing kombineres med både spa og middag på Sola Strand Hotell. Alt du trenger finnes på Solastranden!</string>
+    <string name="les_mer">Les mer...</string>
+    <string name="Hoddevik_intro">Hoddevik ligger i Stad kommune sør for Ålesund. I den lille bygden finner vi en vakker og kjent sandstrand kalt for Hoddevikstranden. Å kjøre fra Ålesund...</string>
+    <string name="Solastranden_intro">Solastranden ligger utenfor Stavanger - rett ved Sola flyplass, lett tilgjengelig med andre ord. Denne stranden er kanskje norges mest populære surfeplass og ...</string>
+    <string name="Unstad_intro">Unstad ligger i Vestvågøy kommune i Lofoten. Lofoten er kjent for sine godesurfeforhold, så her er det mye å velge mellom. Unstad er vår favoritt grunnet den idylliske naturen rundt...</string>
 
 
 </resources>
