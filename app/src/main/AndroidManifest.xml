@@ -14,14 +14,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Surfeapp">
         <activity
+            android:name=".Hustadvika"
+            android:exported="false" />
+        <activity
+            android:name=".AlnesFyr"
+            android:exported="false" />
+        <activity
+            android:name=".Unstad"
+            android:exported="false" />
+        <activity
+            android:name=".Solastranda"
+            android:exported="false" />
+        <activity
+            android:name=".Hoddevik"
+            android:exported="false" />
+        <activity
+            android:name=".top5"
+            android:exported="false" />
+        <activity
             android:name=".SearchResultsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
             <!-- meta tag and intent filter go into results activity -->
-            <meta-data android:name="android.app.searchable"
+            <meta-data
+                android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
+
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
@@ -37,16 +57,16 @@
         </activity>
         <activity
             android:name=".Nybegynner"
-            android:label="NYBEGYNNER"
-            android:exported="false" />
+            android:exported="false"
+            android:label="NYBEGYNNER" />
         <activity
             android:name=".TipsOgTriks"
-            android:label="TIPS OG TRIKS"
-            android:exported="false" />
+            android:exported="false"
+            android:label="TIPS OG TRIKS" />
         <activity
             android:name=".OmSiden"
-            android:label="OM OSS"
-            android:exported="false" />
+            android:exported="false"
+            android:label="OM OSS" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

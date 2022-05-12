@@ -24,7 +24,7 @@
     </style>
 
     <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
-        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
     </style>
 
     <style name="Theme.Splash_Screen_Color" parent="Theme.MaterialComponents.Light">
