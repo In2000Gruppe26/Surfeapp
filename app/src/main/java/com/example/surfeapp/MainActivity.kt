@@ -159,6 +159,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         startActivity(intent)
     }
 
+    fun TilTop5(item: android.view.MenuItem) {
+        val intent = Intent(this, top5::class.java)
+        startActivity(intent)
+    }
+
     override fun onMarkerClick(marker: Marker): Boolean {
         return false
     }
