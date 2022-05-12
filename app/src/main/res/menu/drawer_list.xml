@@ -3,7 +3,7 @@
     android:background="@color/secondary_light">
     <item
         android:id="@+id/nybegynner"
-        android:icon="@drawable/nybegynner"
+        android:icon="@drawable/nybegynner_icon"
         android:onClick="TilNybegynner"
         android:title="Nybegynner?"
         android:background="@color/secondary"/>
