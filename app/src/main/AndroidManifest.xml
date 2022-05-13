@@ -15,22 +15,22 @@
         android:largeHeap="true"
         android:theme="@style/Theme.Surfeapp">
         <activity
-            android:name=".Hustadvika"
+            android:name=".HustadvikaActivity"
             android:exported="false" />
         <activity
-            android:name=".AlnesFyr"
+            android:name=".AlnesFyrActivity"
             android:exported="false" />
         <activity
-            android:name=".Unstad"
+            android:name=".UnstadActivity"
             android:exported="false" />
         <activity
-            android:name=".Solastranda"
+            android:name=".SolastrandaActivity"
             android:exported="false" />
         <activity
-            android:name=".Hoddevik"
+            android:name=".HoddevikActivity"
             android:exported="false" />
         <activity
-            android:name=".Top5"
+            android:name=".Top5Activity"
             android:exported="false" />
 
         <activity
@@ -43,15 +43,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Nybegynner"
+            android:name=".NybegynnerActivity"
             android:label="NYBEGYNNER"
             android:exported="false" />
         <activity
-            android:name=".TipsOgTriks"
+            android:name=".TipsOgTriksActivity"
             android:label="TIPS OG TRIKS"
             android:exported="false" />
         <activity
-            android:name=".OmSiden"
+            android:name=".OmSidenActivity"
             android:label="OM OSS"
             android:exported="false" />
 

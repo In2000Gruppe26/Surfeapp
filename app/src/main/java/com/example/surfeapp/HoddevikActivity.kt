@@ -1,19 +1,18 @@
 package com.example.surfeapp
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class OmSiden : AppCompatActivity() {
+class HoddevikActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_om_siden)
+        setContentView(R.layout.activity_hoddevik)
+
         //actionbar
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = "Om oss"
-        //supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor()))
+        actionbar!!.title = "Hoddevik, vår nr 1"
+        //supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FFA1DBF6")))
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)

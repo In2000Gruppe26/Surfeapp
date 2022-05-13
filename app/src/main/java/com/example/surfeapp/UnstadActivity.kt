@@ -3,15 +3,14 @@ package com.example.surfeapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class Hoddevik : AppCompatActivity() {
+class UnstadActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_hoddevik)
-
+        setContentView(R.layout.activity_unstad)
         //actionbar
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = "Hoddevik, vår nr 1"
+        actionbar!!.title = "Unstad på 3. plass?"
         //supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FFA1DBF6")))
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)

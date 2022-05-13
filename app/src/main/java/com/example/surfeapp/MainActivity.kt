@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.View
 import android.widget.*
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -123,20 +122,20 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     }
 
     fun TilOmSiden(item: android.view.MenuItem) {
-        val intent = Intent(this, OmSiden::class.java)
+        val intent = Intent(this, OmSidenActivity::class.java)
         startActivity(intent)
     }
     fun TilNybegynner(item: android.view.MenuItem) {
-        val intent = Intent(this, Nybegynner::class.java)
+        val intent = Intent(this, NybegynnerActivity::class.java)
         startActivity(intent)
     }
     fun TilTipsOgTriks(item: android.view.MenuItem) {
-        val intent = Intent(this, TipsOgTriks::class.java)
+        val intent = Intent(this, TipsOgTriksActivity::class.java)
         startActivity(intent)
     }
 
     fun TilTop5(item: android.view.MenuItem) {
-        val intent = Intent(this, Top5::class.java)
+        val intent = Intent(this, Top5Activity::class.java)
         startActivity(intent)
     }
 

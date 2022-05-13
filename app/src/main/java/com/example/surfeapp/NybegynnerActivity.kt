@@ -5,15 +5,14 @@ import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class TipsOgTriks : AppCompatActivity() {
+class NybegynnerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tips_og_triks)
-
+        setContentView(R.layout.activity_nybegynner)
         //actionbar
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = "Tips og triks"
+        actionbar!!.title = "NybegynnerActivity?"
         //supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FFA1DBF6")))
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
