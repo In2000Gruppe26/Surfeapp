@@ -1,7 +1,5 @@
 package com.example.surfeapp
 
-//import android.databinding.DataBindingUtil
-
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
@@ -71,28 +69,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         actionBarToggle.syncState()
-
-        /*
-        navView.setNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.nybegynner -> {
-                    Toast.makeText(this, "Nybegynner?", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.tips -> {
-                    Toast.makeText(this, "Tips & triks", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.om -> {
-                    Toast.makeText(this, "Om oss", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                else -> {
-                    print("hei")
-                    false
-                }
-            }
-        }*/
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -173,15 +149,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         intent.putExtra("spotTitle", p0.title)
         startActivity(intent)
     }
-/*
-    override fun onNewIntent(intent: Intent) {
-        super.onNewIntent(intent)
-        setIntent(intent)
-        if (Intent.ACTION_SEARCH == intent.action) {
-            val query = intent.getStringExtra(SearchManager.QUERY)
-            //now you can display the results
-        }
-    }*/
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the options menu from XML
@@ -196,29 +164,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             setIconifiedByDefault(false) // Do not iconify the widget; expand it by default
         }
         return true
-/*
-        menuInflater.inflate(R.menu.options_menu, menu)
-        val search = menu.findItem(R.id.search)
-        val searchView = search.actionView as SearchView
-        searchView.queryHint = "Search"
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                listView_search.setVisibility(View.VISIBLE)
-                return false
-            }
-            override fun onQueryTextChange(newText: String?): Boolean {
-                adapter.filter.filter(newText)
-                return true
-            }
-        })
-        searchView.setOnCloseListener(object : SearchView.OnCloseListener{
-            override fun onClose(): Boolean {
-                listView_search.setVisibility(View.GONE)
-                return true
-            }
-        })
-
-        return super.onCreateOptionsMenu(menu)*/
     }
 
 }
