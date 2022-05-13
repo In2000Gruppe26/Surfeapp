@@ -25,8 +25,8 @@ fun Surfespot.getConditions(): Conditions{
     // Dette er en funksjon som utvider Surfespot så du kan få forholdene på det surfespottet ved å skrive:
     // navn_på_Surfespot_objekt.getConditions()
 
-fun Surfespot.getRating(): Int {
-    return DataSource().getRating(this)
+fun Surfespot.getRating(waveSize: Float, currentSpeed: Float): Int {
+    return DataSource().getRating(waveSize, currentSpeed)
 }
     // BESKRIVELSE
     // Funksjon som returnerer rating av forholdene på spottet.
