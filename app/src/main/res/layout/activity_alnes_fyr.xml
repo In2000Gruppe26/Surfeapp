@@ -10,12 +10,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/alnes"
-            android:layout_marginTop="-397dp"
-            android:layout_marginBottom="-380dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,6 +21,12 @@
             android:textSize="20dp"
             android:layout_marginTop="30dp"
             android:layout_gravity="center"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-378dp"
+            android:layout_marginBottom="-360dp"
+            android:src="@drawable/alnes" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
