@@ -68,11 +68,11 @@ class DataSource {
         return conditions
     }
 
-    public fun getRating(spot:Surfespot):Int{
-        var conditions:Conditions = getConditions(spot)
+    public fun getRating(waveSize:Float, waveSpeed:Float):Int{
+       // var conditions:Conditions = getConditions(spot)
 
-        val waveSize:Float = conditions.waveSize?.toFloat() ?: 0.toFloat()
-        val waveSpeed:Float = conditions.currentSpeed?.toFloat() ?: 0.toFloat()
+        //val waveSize:Float = conditions.waveSize?.toFloat() ?: 0.toFloat()
+        //val waveSpeed:Float = conditions.currentSpeed?.toFloat() ?: 0.toFloat()
 
         var j = -0.5691
         var tot:Float = 0.0.toFloat()
@@ -121,7 +121,6 @@ class DataSource {
     public suspend fun getSpots(context: Context): Spots? {
         // BESKRIVELSE
         // Kall på denne funksjonen for å få en liste med alle surfespot-objekte
-
         val gson = Gson()
         val jsonString: String
         try {

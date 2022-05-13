@@ -47,15 +47,15 @@ class SpotActivity : AppCompatActivity() {
          viewModel.getSurfespots().observe(this) {
              var strand:Surfespot
              for (i in it.list){
-                 println(i.name)
-                 println(spotTitle)
                  if (i.name.equals(spotTitle.dropLast(0))){
-
                      strand = i
-                     val ratingRes = strand.getRating()
-                     rating.rating = ratingRes.toFloat()
+
                      tekstNavn.text = strand.name
                      val cond = strand.getConditions()
+
+                     val ratingRes = strand.getRating((cond.waveSize ?: 0) as Float, (cond.waveSize ?: 0) as Float)
+                     rating.rating = ratingRes.toFloat()
+
                      tekstBolge1.text = cond.waveSize.toString() + " m"
                      tekstBolge2.text = cond.currentSpeed.toString() + " m/s"
                      tekstBolge3.text = cond.currentDirection.toString()
