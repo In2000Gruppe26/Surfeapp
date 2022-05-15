@@ -97,20 +97,20 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     }
 
     fun tilOmSiden(item: android.view.MenuItem) {
-        val intent = Intent(this, OmSiden::class.java)
+        val intent = Intent(this, OmSidenActivity::class.java)
         startActivity(intent)
     }
     fun tilNybegynner(item: android.view.MenuItem) {
-        val intent = Intent(this, Nybegynner::class.java)
+        val intent = Intent(this, NybegynnerActivity::class.java)
         startActivity(intent)
     }
     fun tilTipsOgTriks(item: android.view.MenuItem) {
-        val intent = Intent(this, TipsOgTriks::class.java)
+        val intent = Intent(this, TipsOgTriksActivity::class.java)
         startActivity(intent)
     }
 
     fun tilTop5(item: android.view.MenuItem) {
-        val intent = Intent(this, Top5::class.java)
+        val intent = Intent(this, Top5Activity::class.java)
         startActivity(intent)
     }
 
