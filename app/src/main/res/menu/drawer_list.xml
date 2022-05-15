@@ -4,21 +4,22 @@
     <item
         android:id="@+id/nybegynner"
         android:icon="@drawable/nybegynner_icon"
-        android:onClick="TilNybegynner"
-        android:title="Nybegynner?"
+        android:onClick="tilNybegynner"
+        android:title="@string/nybegynner"
         android:background="@color/secondary"/>
     <item
         android:id="@+id/tips"
-        android:onClick="TilTipsOgTriks"
+        android:onClick="tilTipsOgTriks"
         android:icon="@drawable/tips"
-        android:title="Tips og triks" />
+        android:title="@string/tips_og_triks" />
     <item
         android:id="@+id/om"
-        android:onClick="TilOmSiden"
+        android:onClick="tilOmSiden"
         android:icon="@drawable/om"
-        android:title="Om appen" />
+        android:title="@string/om_appen" />
     <item
         android:id="@+id/top5"
-        android:onClick="TilTop5"
-        android:title="Våre top 5!"/>
+        android:onClick="tilTop5"
+        android:icon="@drawable/top5"
+        android:title="@string/v_re_top_5"/>
 </menu>

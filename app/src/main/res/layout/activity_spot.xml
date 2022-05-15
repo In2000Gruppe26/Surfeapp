@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SpotActivity"
     android:orientation="vertical"
-    android:background="#DCE6F6F8">
+    android:background="#ffffffff">
 
     <TextView
         android:id="@+id/navnTekst"
@@ -17,9 +17,20 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="15dp"
         android:text="Navn"
+        android:textColor="@color/primary_dark"
         android:textSize="30dp"
         android:textStyle="bold">
 
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bølgerating: "
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/primary_dark">
     </TextView>
 
     <RatingBar
@@ -44,38 +55,35 @@
         android:textStyle="bold"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:textColor="@color/primary_dark">
 
     </TextView>
 
 
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="400dp"
         app:cardCornerRadius="5dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:theme="@style/Spot"
         >
 
 
         <LinearLayout
-            android:background="@drawable/farge1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-
-            >
+            android:background="#ffffff"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
-                >
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -92,24 +100,24 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-
-
-                            <ImageView
-                                android:layout_width="70dp"
-                                android:layout_height="60dp"
-                                android:src="@drawable/wave_clipart"
-                                android:layout_marginRight="120dp">
-
-                            </ImageView>
-
                             <TextView
                                 android:layout_width="90dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="100dp"
                                 android:text="Bølger: "
-                                android:textSize="15dp">
+                                android:textSize="15dp"
+                                tools:textStyle="bold">
 
                             </TextView>
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="60dp"
+                                android:layout_marginRight="120dp"
+                                android:src="@drawable/wave_clipart">
+
+                            </ImageView>
+
 
 
                         </LinearLayout>
@@ -117,8 +125,7 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            >
+                            android:orientation="vertical">
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -129,9 +136,9 @@
                                     android:id="@+id/fbolgeTekst1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
                                     android:text="Bølgehøyde:"
-                                    android:textSize="15dp"
-                                    android:layout_marginRight="5dp">
+                                    android:textSize="15dp">
 
                                 </TextView>
 
@@ -155,9 +162,9 @@
                                     android:id="@+id/fbolgeTekst2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginRight="15dp"
                                     android:text="Bølgefart:"
-                                    android:textSize="15dp"
-                                    android:layout_marginRight="15dp">
+                                    android:textSize="15dp">
 
                                 </TextView>
 
@@ -165,12 +172,11 @@
                                     android:id="@+id/bolgeTekst2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginLeft="7dp"
                                     android:text="Sett inn"
-                                    android:textSize="15dp"
-                                    android:layout_marginLeft="7dp">
+                                    android:textSize="15dp">
 
                                 </TextView>
-
 
 
                             </LinearLayout>
@@ -184,42 +190,32 @@
                                     android:id="@+id/fbolgeTekst3"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginRight="15dp"
                                     android:text="Retning:"
-                                    android:textSize="15dp"
-                                    android:layout_marginRight="10dp">
+                                    android:textSize="15dp">
 
                                 </TextView>
 
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    android:layout_marginLeft="22dp">
 
                                     <TextView
                                         android:id="@+id/bolgeTekst3"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Sett inn"
+                                        android:layout_marginLeft="17dp"
                                         android:textSize="15dp">
 
                                     </TextView>
 
-                                    <ImageView
-                                        android:id="@+id/retning"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="24dp"
-                                        app:srcCompat="@drawable/arrow" />
-
-                                </LinearLayout>
-
-
+                                <ImageView
+                                    android:id="@+id/retning"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    app:srcCompat="@drawable/arrow_wind" />
 
 
 
                             </LinearLayout>
-
-
 
 
                         </LinearLayout>
@@ -237,6 +233,15 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
+                            <TextView
+                                android:layout_width="90dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="100dp"
+                                android:text="Vind: "
+                                android:textSize="15dp"
+                                tools:textStyle="bold">
+
+                            </TextView>
 
                             <ImageView
                                 android:layout_width="70dp"
@@ -247,14 +252,6 @@
 
                             </ImageView>
 
-                            <TextView
-                                android:layout_width="90dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="100dp"
-                                android:text="Vind: "
-                                android:textSize="15dp">
-
-                            </TextView>
 
 
                         </LinearLayout>
@@ -262,8 +259,7 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            >
+                            android:orientation="vertical">
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -274,9 +270,9 @@
                                     android:id="@+id/fvindTekst1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginRight="10dp"
                                     android:text="Vindfart: "
-                                    android:textSize="15dp"
-                                    android:layout_marginRight="10dp">
+                                    android:textSize="15dp">
 
                                 </TextView>
 
@@ -284,9 +280,9 @@
                                     android:id="@+id/vindTekst1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
                                     android:text="Sett inn"
-                                    android:textSize="15dp"
-                                    android:layout_marginLeft="16dp">
+                                    android:textSize="15dp">
 
                                 </TextView>
 
@@ -301,9 +297,9 @@
                                     android:id="@+id/fvindTekst2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginRight="10dp"
                                     android:text="Retning: "
-                                    android:textSize="15dp"
-                                    android:layout_marginRight="10dp">
+                                    android:textSize="15dp">
 
                                 </TextView>
 
@@ -311,14 +307,17 @@
                                     android:id="@+id/vindTekst2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginLeft="18dp"
                                     android:text="Sett inn"
-                                    android:textSize="15dp"
-                                    android:layout_marginLeft="18dp">
+                                    android:textSize="15dp">
 
                                 </TextView>
-
+                                <ImageView
+                                    android:id="@+id/retningVind"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    app:srcCompat="@drawable/arrow_wind" />
                             </LinearLayout>
-
 
 
                         </LinearLayout>
@@ -331,51 +330,72 @@
                         android:orientation="horizontal">
 
                         <LinearLayout
-                            android:layout_width="213dp"
+                            android:layout_width="191dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-
-                            <ImageView
-                                android:layout_width="60dp"
-                                android:layout_height="40dp"
-                                android:layout_marginTop="5dp"
-                                android:layout_marginRight="150dp"
-                                android:layout_marginBottom="15dp"
-                                android:src="@drawable/temp_clipart">
-
-                            </ImageView>
 
                             <TextView
                                 android:layout_width="90dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="100dp"
                                 android:text="Temperatur: "
-                                android:textSize="15dp">
+                                android:textSize="15dp"
+                                tools:textStyle="bold">
 
                             </TextView>
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="120dp"
+                                android:layout_marginBottom="15dp"
+                                android:src="@drawable/temp_clipart">
+
+                            </ImageView>
 
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tempTekst"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5"
-                                android:textSize="30dp">
-
-                            </TextView>
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"/>
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tempTekst2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="2dp"
+                                    android:text="Lufttemperatur: "
+                                    android:textSize="15dp">
+
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/tempTekst"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="0dp"
+                                    android:text="0"
+                                    android:textSize="15dp">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical" />
 
 
                         </LinearLayout>
@@ -383,9 +403,7 @@
                     </LinearLayout>
 
 
-
                 </LinearLayout>
-
 
 
             </LinearLayout>
@@ -393,16 +411,16 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Beskrivelse: "
-                    android:textSize="15dp">
+                    android:textSize="15dp"
+                    tools:textStyle="bold">
 
                 </TextView>
 
@@ -411,15 +429,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sett inn"
-                    android:textSize="15dp">
+                    android:textSize="15dp"
+                    tools:textStyle="normal">
 
                 </TextView>
 
 
-
             </LinearLayout>
-
-
 
 
         </LinearLayout>
@@ -427,7 +443,7 @@
 
 
 
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 
 

@@ -1,13 +1,10 @@
 package com.example.surfeapp
 
-//import android.databinding.DataBindingUtil
-
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.View
 import android.widget.*
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -22,31 +19,15 @@ import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
-import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListener,
     OnInfoWindowClickListener {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMainBinding
-
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var actionBarToggle: ActionBarDrawerToggle
-    private lateinit var navView: NavigationView
-
-    private var myMarker: Marker? = null
-
-    lateinit var searchView: SearchView
-    lateinit var listView: ListView
     lateinit var list: ArrayList<String>
-    lateinit var adapter: ArrayAdapter<*>
-
-    private lateinit var listView_search: ListView
-    private lateinit var emptyView: TextView
-    lateinit var spotList: Spots
-    companion object {
-        var tokenSecret: String? = null
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,14 +35,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
 
         setContentView(binding.root)
 
-        //actionbarlogo
         supportActionBar?.apply {
             setDisplayShowHomeEnabled(true)
             setDisplayUseLogoEnabled(true)
             setLogo(R.drawable.logo_5)
         }
-
-
 
         drawerLayout = findViewById(R.id.drawerLayout)
 
@@ -71,36 +49,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         actionBarToggle.syncState()
-
-        /*
-        navView.setNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.nybegynner -> {
-                    Toast.makeText(this, "Nybegynner?", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.tips -> {
-                    Toast.makeText(this, "Tips & triks", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.om -> {
-                    Toast.makeText(this, "Om oss", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                else -> {
-                    print("hei")
-                    false
-                }
-            }
-        }*/
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-
-
-
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -125,9 +76,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
                 val longMain: Double = it.list[i].coordinates.longitude
                 val latMain: Double = it.list[i].coordinates.latitude
                 val nameCords: String = it.list[i].name
-                val rating: Int = 1 //it.list[i].getRating()
                 val temp = LatLng(latMain, longMain)
-                mMap.addMarker(MarkerOptions().position(temp).title("$nameCords").snippet(it.list[i].description).icon(
+                mMap.addMarker(MarkerOptions().position(temp).title(nameCords).snippet(it.list[i].description).icon(
                     BitmapDescriptorFactory.fromResource(R.drawable.pin)))
                 i++
             }
@@ -146,20 +96,20 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         return true
     }
 
-    fun TilOmSiden(item: android.view.MenuItem) {
+    fun tilOmSiden(item: android.view.MenuItem) {
         val intent = Intent(this, OmSiden::class.java)
         startActivity(intent)
     }
-    fun TilNybegynner(item: android.view.MenuItem) {
+    fun tilNybegynner(item: android.view.MenuItem) {
         val intent = Intent(this, Nybegynner::class.java)
         startActivity(intent)
     }
-    fun TilTipsOgTriks(item: android.view.MenuItem) {
+    fun tilTipsOgTriks(item: android.view.MenuItem) {
         val intent = Intent(this, TipsOgTriks::class.java)
         startActivity(intent)
     }
 
-    fun TilTop5(item: android.view.MenuItem) {
+    fun tilTop5(item: android.view.MenuItem) {
         val intent = Intent(this, Top5::class.java)
         startActivity(intent)
     }
@@ -193,7 +143,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         (menu.findItem(R.id.search).actionView as SearchView).apply {
             // Assumes current activity is the searchable activity
             setSearchableInfo(searchManager.getSearchableInfo(componentName))
-            setIconifiedByDefault(false) // Do not iconify the widget; expand it by default
+            isIconifiedByDefault = false // Do not iconify the widget; expand it by default
         }
         return true
 /*

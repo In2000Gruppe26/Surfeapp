@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Surfespot</string>
-    <string name="nybegynner">Nybegynner?</string>
     <string name="o1">På Surfespots kan surfere fra alle nivåer finne ut om det er gode eller dårlige surfeforhold. Appen viser hvilke steder i Norge man kan surfe på, samt hvordan forholdene er akkurat her og nå.</string>
     <string name="o2">Er du nybegynner finnes det en enkel veileder på hva du bør tenke over før din           første surfetur. Du vil også finne tips og triks for en best mulig surfeopplevelse! Hvis du ønsker å være helt oppe med de profesjonelle finnes det også en stikkords guide.</string>
     <string name="o3">Surfespot er et samarbeid mellom institutt for informatikk og Meteorologisk institutt ved universitetet i Oslo. Utviklingsteamet består av seks informatikk studenter.</string>
@@ -44,6 +43,10 @@
     <string name="Hoddevik_intro">Hoddevik ligger i Stad kommune sør for Ålesund. I den lille bygden finner vi en vakker og kjent sandstrand kalt for Hoddevikstranden. Å kjøre fra Ålesund...</string>
     <string name="Solastranden_intro">Solastranden ligger utenfor Stavanger - rett ved Sola flyplass, lett tilgjengelig med andre ord. Denne stranden er kanskje norges mest populære surfeplass og ...</string>
     <string name="Unstad_intro">Unstad ligger i Vestvågøy kommune i Lofoten. Lofoten er kjent for sine godesurfeforhold, så her er det mye å velge mellom. Unstad er vår favoritt grunnet den idylliske naturen rundt...</string>
+    <string name="nybegynner">Nybegynner?</string>
+    <string name="tips_og_triks">Tips og triks</string>
+    <string name="om_appen">Om appen</string>
+    <string name="v_re_top_5">Våre top 5!</string>
 
 
 </resources>
