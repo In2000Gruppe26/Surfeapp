@@ -7,22 +7,29 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlin.math.abs
 
 class SpotActivityViewModel : ViewModel() {
     //ViewModel (V)
 
     private val dataSource = DataSource()
 
-    private val surfespots = MutableLiveData<Spots>()
+    private val spot = MutableLiveData<Surfespot>()
 
-    fun getSurfespots(): LiveData<Spots> {
-        return surfespots
+    fun getSurfespot(): LiveData<Surfespot> {
+        return spot
     }
 
-    fun fetchSurfespots(context: Context) {
+    fun fetchSurfespot(context: Context, spotTitle: String) {
         viewModelScope.launch(Dispatchers.IO) {
             dataSource.getSpots(context).also {
-                surfespots.postValue(it)
+                if (it != null) {
+                    for (i in it.list){
+                        if (i.name.equals(spotTitle)){
+                            spot.postValue(i)
+                        }
+                    }
+                }
             }
         }
     }

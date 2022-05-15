@@ -22,9 +22,9 @@ class SpotActivity : AppCompatActivity() {
 
          //actionbarlogo
          supportActionBar?.apply {
+             setLogo(R.drawable.logo_5)
              setDisplayShowHomeEnabled(true)
              setDisplayUseLogoEnabled(true)
-             setLogo(R.drawable.logo_5)
          }
          //ok
 
@@ -37,6 +37,7 @@ class SpotActivity : AppCompatActivity() {
          val retning = findViewById<ImageView>(R.id.retning)
          val tekstVind1 = findViewById<TextView>(R.id.vindTekst1)
          val tekstVind2 = findViewById<TextView>(R.id.vindTekst2)
+         val retningVind = findViewById<ImageView>(R.id.retningVind)
          val tekstTemp = findViewById<TextView>(R.id.tempTekst)
          val tekstBes = findViewById<TextView>(R.id.besTekst)
          val rating = findViewById<RatingBar>(R.id.rating1)
@@ -44,48 +45,40 @@ class SpotActivity : AppCompatActivity() {
 
          val spotTitle: String = intent.extras?.getString("spotTitle") ?: ""
          //VIKTIG: FIKSE SÅ DEN FINNER RIKTIG SPOT
-         viewModel.getSurfespots().observe(this) {
-             var strand:Surfespot
-             for (i in it.list){
-                 if (i.name.equals(spotTitle.dropLast(0))){
-                     strand = i
+         viewModel.getSurfespot().observe(this) {
+             tekstNavn.text = it.name
+             val cond = it.getConditions()
 
-                     tekstNavn.text = strand.name
-                     val cond = strand.getConditions()
+             val ratingRes = it.getRating((cond.waveSize ?: 0) as Float, (cond.waveSize ?: 0) as Float)
+             rating.rating = ratingRes.toFloat()
 
-                     val ratingRes = strand.getRating((cond.waveSize ?: 0) as Float, (cond.waveSize ?: 0) as Float)
-                     rating.rating = ratingRes.toFloat()
+             tekstBolge1.text = cond.waveSize.toString() + " m"
+             tekstBolge2.text = cond.currentSpeed.toString() + " m/s"
+             tekstBolge3.text = cond.currentDirection.toString()
 
-                     tekstBolge1.text = cond.waveSize.toString() + " m"
-                     tekstBolge2.text = cond.currentSpeed.toString() + " m/s"
-                     tekstBolge3.text = cond.currentDirection.toString()
+             tekstVind1.text = cond.wind_speed.toString()  + " m/s"
 
-                     tekstVind1.text = cond.wind_speed.toString()  + " m/s"
+             tekstVind2.text = cond.wind_from_direction.toString()
 
-                     tekstVind2.text = cond.wind_from_direction.toString()
-
-                     tekstTemp.text = cond.air_temperature.toString()  + "°C"
-                     tekstBes.text = strand.deep_description.toString()
-                     fun degToW(num: Float): String{
-                         val direction = abs(num)
-                         val index = ((direction/22.5)+.5).toInt()
-                         val arr = arrayOf("N","NNØ","NØ","ØNØ","Ø","ØSØ", "SØ", "SSØ","S","SSV","SV","VSV","V","VNV","NV","NNV")
-                         return(arr[(index % 16)])
-                     }
-                     tekstVind2.text = degToW(cond.wind_from_direction ?: 0f)
-
-                     tekstBolge3.text = degToW(cond.currentDirection ?: 0f)
-                     
-                     retning.rotation = cond.currentDirection ?: 0f
-                 }
+             tekstTemp.text = cond.air_temperature.toString()  + "°C"
+             tekstBes.text = it.deep_description.toString()
+             fun degToW(num: Float): String{
+                 val direction = abs(num)
+                 val index = ((direction/22.5)+.5).toInt()
+                 val arr = arrayOf("N","NNØ","NØ","ØNØ","Ø","ØSØ", "SØ", "SSØ","S","SSV","SV","VSV","V","VNV","NV","NNV")
+                 return(arr[(index % 16)])
              }
+             tekstVind2.text = degToW(cond.wind_from_direction ?: 0f)
 
+             tekstBolge3.text = degToW(cond.currentDirection ?: 0f)
+
+             retning.rotation = cond.currentDirection ?: 0f
+
+             retningVind.rotation = cond.wind_from_direction ?: 0f
 
          }
 
-
-         viewModel.fetchSurfespots(applicationContext)
-
+         viewModel.fetchSurfespot(applicationContext, spotTitle.dropLast(0))
 
     }
 }

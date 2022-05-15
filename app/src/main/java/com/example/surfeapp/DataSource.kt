@@ -1,63 +1,50 @@
 package com.example.surfeapp
 
 import android.content.Context
-import com.example.surfeapp.MainActivity.Companion.tokenSecret
 import com.github.kittinunf.fuel.Fuel
-import com.github.kittinunf.fuel.core.Headers
-import com.github.kittinunf.fuel.core.ResponseDeserializable
-import com.github.kittinunf.fuel.core.awaitResponse
-import com.github.kittinunf.fuel.coroutines.awaitResponse
 import com.github.kittinunf.fuel.coroutines.awaitString
 import com.google.gson.Gson
 import kotlinx.coroutines.runBlocking
-import org.json.JSONObject
 import java.io.IOException
 import kotlin.math.exp
 
 class DataSource {
-//CLIENT ID FROST: af800469-bcec-450b-95c7-d7944ca2b73b
-//CLIENT SECRET FROST: 0f39f1cf-033e-43a5-9602-f5855725a638
-    private lateinit var token:Token
-
-    public fun onCreate(){
+    fun onCreate(){
 
     }
 
-    public fun getConditions(spot:Surfespot):Conditions{
-        //println(token.access_token)
+    fun getConditions(spot:Surfespot):Conditions{
         // BESKRIVELSE
         // Når du bruker Surfespot.getConditions så kaller den egentlig bare på denne
+        var urlOcean = "https://in2000-apiproxy.ifi.uio.no/weatherapi/oceanforecast/2.0/complete?"
 
-        // LEGGE TIL ASYNKRON GET MED FUEL HER <------------
-        var url = "https://in2000-apiproxy.ifi.uio.no/weatherapi/oceanforecast/2.0/complete?"
+        urlOcean += "lat=" + spot.coordinates.latitude.toString()
+        urlOcean += "&lon=" + spot.coordinates.longitude.toString()
 
-        url += "lat=" + spot.coordinates.latitude.toString()
-        url += "&lon=" + spot.coordinates.longitude.toString()
+        var urlNow = "https://in2000-apiproxy.ifi.uio.no/weatherapi/nowcast/2.0/complete?"
 
-        var url2 = "https://in2000-apiproxy.ifi.uio.no/weatherapi/nowcast/2.0/complete?"
-
-        url2 += "lat=" + spot.coordinates.latitude.toString()
-        url2 += "&lon=" + spot.coordinates.longitude.toString()
+        urlNow += "lat=" + spot.coordinates.latitude.toString()
+        urlNow += "&lon=" + spot.coordinates.longitude.toString()
 
         val gson = Gson()
-        var conditions:Conditions = Conditions(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F)
+        var conditions = Conditions(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F)
         runBlocking {
             try {
 
-                val response = gson.fromJson(Fuel.get(url).awaitString(), Base::class.java)
+                val responseOcean = gson.fromJson(Fuel.get(urlOcean).awaitString(), Base::class.java)
 
-                val response2 = gson.fromJson(Fuel.get(url2).awaitString(), Base2::class.java)
+                val responseNow = gson.fromJson(Fuel.get(urlNow).awaitString(), Base2::class.java)
 
-                val wavesize:Float? = response.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_surface_wave_height
-                val currentspeed:Float? = response.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_water_speed
-                val currentdirection:Float? = response.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_water_to_direction
+                val waveSize:Float? = responseOcean.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_surface_wave_height
+                val currentSpeed:Float? = responseOcean.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_water_speed
+                val currentDirection:Float? = responseOcean.properties?.timeseries?.get(0)?.data?.instant?.details?.sea_water_to_direction
 
-                val air_temperature = response2.properties?.timeseries?.get(0)?.data?.instant?.details?.air_temperature
-                val precipitation_rate = response2.properties?.timeseries?.get(0)?.data?.instant?.details?.precipitation_rate
-                val wind_speed = response2.properties?.timeseries?.get(0)?.data?.instant?.details?.wind_speed
-                val wind_from_direction = response2.properties?.timeseries?.get(0)?.data?.instant?.details?.wind_from_direction
+                val airTemperature = responseNow.properties?.timeseries?.get(0)?.data?.instant?.details?.air_temperature
+                val precipitationRate = responseNow.properties?.timeseries?.get(0)?.data?.instant?.details?.precipitation_rate
+                val windSpeed = responseNow.properties?.timeseries?.get(0)?.data?.instant?.details?.wind_speed
+                val windFromDirection = responseNow.properties?.timeseries?.get(0)?.data?.instant?.details?.wind_from_direction
 
-                conditions = Conditions(wavesize, currentspeed, currentdirection, air_temperature, precipitation_rate, wind_speed, wind_from_direction)
+                conditions = Conditions(waveSize, currentSpeed, currentDirection, airTemperature, precipitationRate, windSpeed, windFromDirection)
                 println(conditions.toString())
                 println(spot.toString())
             } catch(exception: Exception) {
@@ -68,7 +55,7 @@ class DataSource {
         return conditions
     }
 
-    public fun getRating(waveSize:Float, waveSpeed:Float):Int{
+    fun getRating(waveSize:Float, waveSpeed:Float):Int{
        // var conditions:Conditions = getConditions(spot)
 
         //val waveSize:Float = conditions.waveSize?.toFloat() ?: 0.toFloat()
@@ -78,70 +65,65 @@ class DataSource {
         var tot:Float = 0.0.toFloat()
         var i = j
         
-        val B_1 = 1.4
-        val B_2 = -0.474
+        val b1 = 1.4
+        val b2 = -0.474
         
-        var probabilities = mutableListOf<Float>()
+        val probabilities = mutableListOf<Float>()
         for(a in 3..7){
             if(a > 3){
                 if(a == 7){
                     probabilities.add(a-3, 1 - tot)
                 }else if(a == 4){
                     i = j + 1.2
-                    probabilities.add(a-3, (exp(i-B_1*waveSize-B_2*waveSpeed)/(1+exp(i-B_1*waveSize-B_2*waveSpeed))-exp(j-B_1*waveSize-B_2*waveSpeed)/(1+exp(j-B_1*waveSize-B_2*waveSpeed))).toFloat())
-                    tot = tot + (exp(i-B_1*waveSize-B_2*waveSpeed)/(1+exp(i-B_1*waveSize-B_2*waveSpeed))-exp(j-B_1*waveSize-B_2*waveSpeed)/(1+exp(j-B_1*waveSize-B_2*waveSpeed))).toFloat()
+                    probabilities.add(a-3, (exp(i-b1*waveSize-b2*waveSpeed)/(1+exp(i-b1*waveSize-b2*waveSpeed))-exp(j-b1*waveSize-b2*waveSpeed)/(1+exp(j-b1*waveSize-b2*waveSpeed))).toFloat())
+                    tot += (exp(i - b1 * waveSize - b2 * waveSpeed) / (1 + exp(i - b1 * waveSize - b2 * waveSpeed)) - exp(j - b1 * waveSize - b2 * waveSpeed) / (1 + exp(j - b1 * waveSize - b2 * waveSpeed))).toFloat()
                 }else{
                     i = j + 1.1
-                    probabilities.add(a-3,(exp(i-B_1*waveSize-B_2*waveSpeed)/(1+exp(i-B_1*waveSize-B_2*waveSpeed))-exp(j-B_1*waveSize-B_2*waveSpeed)/(1+exp(j-B_1*waveSize-B_2*waveSpeed))).toFloat())
-                    tot = tot + (exp(i-B_1*waveSize-B_2*waveSpeed)/(1+exp(i-B_1*waveSize-B_2*waveSpeed))-exp(j-B_1*waveSize-B_2*waveSpeed)/(1+exp(j-B_1*waveSize-B_2*waveSpeed))).toFloat()
-
+                    probabilities.add(a-3,(exp(i-b1*waveSize-b2*waveSpeed)/(1+exp(i-b1*waveSize-b2*waveSpeed))-exp(j-b1*waveSize-b2*waveSpeed)/(1+exp(j-b1*waveSize-b2*waveSpeed))).toFloat())
+                    tot += (exp(i - b1 * waveSize - b2 * waveSpeed) / (1 + exp(i - b1 * waveSize - b2 * waveSpeed)) - exp(j - b1 * waveSize - b2 * waveSpeed) / (1 + exp(j - b1 * waveSize - b2 * waveSpeed))).toFloat()
                 }
             }else{
                 i = j
-                probabilities.add(a-3, (exp(i-B_1*waveSize-B_2*waveSpeed)/(1+exp(i-B_1*waveSize-B_2*waveSpeed))).toFloat())
-                tot = tot + (exp(i-B_1*waveSize-B_2*waveSpeed)/(1+exp(i-B_1*waveSize-B_2*waveSpeed))).toFloat()
+                probabilities.add(a-3, (exp(i-b1*waveSize-b2*waveSpeed)/(1+exp(i-b1*waveSize-b2*waveSpeed))).toFloat())
+                tot += (exp(i - b1 * waveSize - b2 * waveSpeed) / (1 + exp(i - b1 * waveSize - b2 * waveSpeed))).toFloat()
             }
             j = i
         }
 
         var max:Float = 0.0.toFloat()
         var bestGuess = 0
-        var k:Int = 0
-        for(p in probabilities){
+        for((k, p) in probabilities.withIndex()){
             if(p > max){
                 max = p
                 bestGuess = k
             }
-            k++
         }
         println(probabilities.toString())
         return bestGuess + 1
     }
 
-    public suspend fun getSpots(context: Context): Spots? {
+    fun getSpots(context: Context): Spots? {
         // BESKRIVELSE
         // Kall på denne funksjonen for å få en liste med alle surfespot-objekte
         val gson = Gson()
         val jsonString: String
-        try {
+        return try {
             jsonString = context.assets.open("surfespots.json").bufferedReader().use { it.readText() }
-            val response = gson.fromJson(jsonString, Spots_json::class.java)
+            val response = gson.fromJson(jsonString, SpotsJson::class.java)
             println(response.toString())
-            var converted_response:MutableList<Surfespot> = mutableListOf()
+            val convertedResponse:MutableList<Surfespot> = mutableListOf()
             for (i in response.list){
-                val tmp_spot:Surfespot = Surfespot(i.id, i.name, Coordinates(i.latitude, i.longitude), i.description, i.deep_description)
-                converted_response.add(tmp_spot)
+                val tmpSpot = Surfespot(i.id, i.name, Coordinates(i.latitude, i.longitude), i.description, i.deep_description)
+                convertedResponse.add(tmpSpot)
             }
-            val spots: Spots = Spots(converted_response)
-            return spots
+            val spots = Spots(convertedResponse)
+            spots
         } catch (ioException: IOException) {
             ioException.printStackTrace()
-            return null
+            null
         }
     }
 }
-
-// result generated from /json
 
 data class Base(val type: String?, val geometry: Geometry?, val properties: Properties?)
 
@@ -161,9 +143,9 @@ data class Timeseries139117139(val time: String?, val data: Data?)
 
 data class Units(val sea_surface_wave_from_direction: String?, val sea_surface_wave_height: String?, val sea_water_speed: String?, val sea_water_temperature: String?, val sea_water_to_direction: String?)
 
-data class Surfespot_json(val id: Int, val name: String, val latitude: Double, val longitude: Double, val description: String?, val deep_description: String?)
+data class SurfespotJson(val id: Int, val name: String, val latitude: Double, val longitude: Double, val description: String?, val deep_description: String?)
 
-data class Spots_json(val list: List<Surfespot_json>)
+data class SpotsJson(val list: List<SurfespotJson>)
 
 
 
@@ -191,15 +173,5 @@ data class Timeseries5905723(val time: String?, val data: Data2?)
 
 data class Units2(val air_temperature: String?, val precipitation_amount: String?, val precipitation_rate: String?, val relative_humidity: String?, val wind_from_direction: String?, val wind_speed: String?, val wind_speed_of_gust: String?)
 
-data class Token(val access_token: String?, val token_type: String?, val expires_in: Number?){
-    //User Deserializer
-    class Deserializer : ResponseDeserializable<Token> {
-        override fun deserialize(content: String) = Gson().fromJson(content, Token::class.java)
-    }
-}
 
-// result generated from /json
 
-data class Base3(val forecastDatetime: String?, val routePoints: List<RoutePoints595846129>?)
-
-data class RoutePoints595846129(val lat: Number?, val lon: Number?, val passingTime: String?, val forecastDatetime: String?)
