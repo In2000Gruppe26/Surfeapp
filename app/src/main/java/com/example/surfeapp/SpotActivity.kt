@@ -39,6 +39,7 @@ class SpotActivity : AppCompatActivity() {
          val tekstVind2 = findViewById<TextView>(R.id.vindTekst2)
          val retningVind = findViewById<ImageView>(R.id.retningVind)
          val tekstTemp = findViewById<TextView>(R.id.tempTekst)
+         val tekstNedbor = findViewById<TextView>(R.id.nedbor)
          val tekstBes = findViewById<TextView>(R.id.besTekst)
          val rating = findViewById<RatingBar>(R.id.rating1)
 
@@ -75,7 +76,7 @@ class SpotActivity : AppCompatActivity() {
              retning.rotation = cond.currentDirection ?: 0f
 
              retningVind.rotation = cond.wind_from_direction ?: 0f
-
+             tekstNedbor.text = cond.precipitation_rate.toString() + " mm/t"
          }
 
          viewModel.fetchSurfespot(applicationContext, spotTitle.dropLast(0))

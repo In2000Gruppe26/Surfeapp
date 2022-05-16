@@ -63,7 +63,7 @@
                     android:background="@color/transparent"
                     android:text="@string/les_mer"
                     android:textColor="@color/black"
-                    android:textSize="10dp" />
+                    android:textSize="15dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -99,7 +99,7 @@
                     android:background="@color/transparent"
                     android:text="Les mer..."
                     android:textColor="@color/black"
-                    android:textSize="10dp" />
+                    android:textSize="15dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -135,7 +135,7 @@
                     android:background="@color/transparent"
                     android:text="Les mer..."
                     android:textColor="@color/black"
-                    android:textSize="10dp" />
+                    android:textSize="15dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -174,7 +174,7 @@
                     android:background="@color/transparent"
                     android:text="Les mer..."
                     android:textColor="@color/black"
-                    android:textSize="10dp" />
+                    android:textSize="15dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -212,7 +212,7 @@
                     android:background="@color/transparent"
                     android:text="Les mer..."
                     android:textColor="@color/black"
-                    android:textSize="10dp" />
+                    android:textSize="15dp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
