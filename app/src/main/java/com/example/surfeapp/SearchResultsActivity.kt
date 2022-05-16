@@ -20,7 +20,7 @@ class SearchResultsActivity : AppCompatActivity() {
 
     lateinit var adapter: ArrayAdapter<*>
 
-    private lateinit var listView_search: ListView
+    private lateinit var listViewSearch: ListView
     private lateinit var emptyView: TextView
     lateinit var spotList: Spots
 
@@ -37,16 +37,16 @@ class SearchResultsActivity : AppCompatActivity() {
         viewModel1.getSurfespotsMain().observe(this) {
 
             spotList = it
-            listView_search = findViewById(R.id.listView_search)
+            listViewSearch = findViewById(R.id.listView_search)
             emptyView = findViewById(R.id.emptyView)
             adapter = ArrayAdapter<Any?>(this, android.R.layout.simple_list_item_1,
                 spotList.list.map { it.name }.toTypedArray())
-            listView_search.adapter = adapter
-            listView_search.onItemClickListener =
+            listViewSearch.adapter = adapter
+            listViewSearch.onItemClickListener =
                 AdapterView.OnItemClickListener { adapterView, _, i, _ ->
 
                 }
-            listView_search.emptyView = emptyView
+            listViewSearch.emptyView = emptyView
         }
 
         viewModel1.fetchSurfespotsMain(applicationContext)
