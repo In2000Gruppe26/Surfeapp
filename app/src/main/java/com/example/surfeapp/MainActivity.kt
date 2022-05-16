@@ -135,7 +135,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the options menu from XML
-        val inflater = menuInflater
+       val inflater = menuInflater
         inflater.inflate(R.menu.options_menu, menu)
 
         // Get the SearchView and set the searchable configuration
