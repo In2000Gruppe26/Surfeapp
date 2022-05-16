@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
                 val latMain: Double = it.list[i].coordinates.latitude
                 val nameCords: String = it.list[i].name
                 val temp = LatLng(latMain, longMain)
-                mMap.addMarker(MarkerOptions().position(temp).title(nameCords).snippet(it.list[i].description).icon(
+                mMap.addMarker(MarkerOptions().position(temp).title(nameCords).snippet("Trykk for å se mer").icon(
                     BitmapDescriptorFactory.fromResource(R.drawable.pin)))
                 i++
             }
