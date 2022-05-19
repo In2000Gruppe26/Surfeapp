@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlin.math.abs
 
 class SpotActivityViewModel : ViewModel() {
 
@@ -24,7 +23,7 @@ class SpotActivityViewModel : ViewModel() {
             dataSource.getSpots(context).also {
                 if (it != null) {
                     for (i in it.list){
-                        if (i.name.equals(spotTitle)){
+                        if (i.name == spotTitle){
                             spot.postValue(i)
                         }
                     }

@@ -3,26 +3,18 @@ package com.example.surfeapp
 import android.app.SearchManager
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.widget.*
-import android.widget.AdapterView.OnItemClickListener
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.node.getOrAddAdapter
-import androidx.core.view.get
-import com.example.surfeapp.databinding.ActivitySearchResultsBinding
-
 
 class SearchResultsActivity : AppCompatActivity() {
     lateinit var adapter: ArrayAdapter<*>
 
     private lateinit var listViewSearch: ListView
     private lateinit var emptyView: TextView
-    lateinit var spotList: Spots
 
-    lateinit var searchManager: SearchView
-    var searchQuery: String = ""
+    private lateinit var searchManager: SearchView
+    private var searchQuery: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +39,7 @@ class SearchResultsActivity : AppCompatActivity() {
 
         listViewSearch.adapter = adapter
         listViewSearch.onItemClickListener =
-            AdapterView.OnItemClickListener { adapterView, _, i, _ ->
+            AdapterView.OnItemClickListener { _, _, i, _ ->
                 val intent = Intent(this, SpotActivity::class.java)
                 intent.putExtra("spotTitle", listViewSearch.adapter.getItem(i).toString())
                 startActivity(intent)
@@ -62,9 +54,10 @@ class SearchResultsActivity : AppCompatActivity() {
         }
     }
 
-    fun doMySearch(query: String){
+    private fun doMySearch(query: String){
         adapter.filter.filter(query)
     }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.options_menu, menu)
@@ -83,7 +76,6 @@ class SearchResultsActivity : AppCompatActivity() {
                 return true
             }
         })
-
         return true
     }
 

@@ -6,8 +6,6 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.viewModelScope
-import androidx.test.core.app.ActivityScenario.launch
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 import kotlin.math.abs
@@ -60,21 +58,25 @@ class SpotActivity : AppCompatActivity(), CoroutineScope {
                      cond = it.getConditions()
 
                      ratingRes =
-                         it.getRating((cond.waveSize ?: 0) as Float, (cond.waveSize ?: 0) as Float)
+                         getRating((cond.waveSize ?: 0) as Float, (cond.waveSize ?: 0) as Float)
 
                  }
                  deferred.await()
                  rating.rating = ratingRes.toFloat()
 
-                 tekstBolge1.text = cond.waveSize.toString() + " m"
-                 tekstBolge2.text = cond.currentSpeed.toString() + " m/s"
+
+                 tekstBolge1.text = String.format(getText(R.string.meter).toString(), cond.waveSize.toString().format(2))
+
+                 tekstBolge2.text = String.format(getText(R.string.metersec).toString(), cond.currentSpeed.toString().format(2))
+
                  tekstBolge3.text = cond.currentDirection.toString()
 
-                 tekstVind1.text = cond.wind_speed.toString() + " m/s"
+                 tekstVind1.text = String.format(getText(R.string.metersec).toString(), cond.wind_speed.toString().format(2))
 
                  tekstVind2.text = cond.wind_from_direction.toString()
 
-                 tekstTemp.text = cond.air_temperature.toString() + "°C"
+                 tekstTemp.text = String.format(getText(R.string.celcius).toString(), cond.air_temperature.toString().format(2))
+
                  fun degToW(num: Float): String {
                      val direction = abs(num)
                      val index = ((direction / 22.5) + .5).toInt()
@@ -105,7 +107,8 @@ class SpotActivity : AppCompatActivity(), CoroutineScope {
                  retning.rotation = cond.currentDirection ?: 0f
 
                  retningVind.rotation = cond.wind_from_direction ?: 0f
-                 tekstNedbor.text = cond.precipitation_rate.toString() + " mm/t"
+                 tekstNedbor.text = String.format(getText(R.string.millhour).toString(), cond.precipitation_rate.toString() .format(2))
+
              }
          }
 

@@ -2,23 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/secondary_light">
     <item
-        android:id="@+id/nybegynner"
         android:icon="@drawable/nybegynner_icon"
         android:onClick="tilNybegynner"
         android:title="@string/nybegynner"
         android:background="@color/secondary"/>
     <item
-        android:id="@+id/tips"
         android:onClick="tilTipsOgTriks"
         android:icon="@drawable/tips"
         android:title="@string/tips_og_triks" />
     <item
-        android:id="@+id/om"
         android:onClick="tilOmSiden"
         android:icon="@drawable/om"
         android:title="@string/om_appen" />
     <item
-        android:id="@+id/top5"
         android:onClick="tilTop5"
         android:icon="@drawable/top5"
         android:title="@string/v_re_top_5"/>

@@ -30,7 +30,6 @@ class DataSource {
         var conditions = Conditions(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F)
         runBlocking {
             try {
-
                 val responseOcean = gson.fromJson(Fuel.get(urlOcean).awaitString(), Base::class.java)
 
                 val responseNow = gson.fromJson(Fuel.get(urlNow).awaitString(), Base2::class.java)
@@ -55,11 +54,6 @@ class DataSource {
     }
 
     fun getRating(waveSize:Float, waveSpeed:Float):Int{
-       // var conditions:Conditions = getConditions(spot)
-
-        //val waveSize:Float = conditions.waveSize?.toFloat() ?: 0.toFloat()
-        //val waveSpeed:Float = conditions.currentSpeed?.toFloat() ?: 0.toFloat()
-
         var j = -0.5691
         var tot:Float = 0.0.toFloat()
         var i = j
@@ -70,16 +64,20 @@ class DataSource {
         val probabilities = mutableListOf<Float>()
         for(a in 3..7){
             if(a > 3){
-                if(a == 7){
-                    probabilities.add(a-3, 1 - tot)
-                }else if(a == 4){
-                    i = j + 1.2
-                    probabilities.add(a-3, (exp(i-b1*waveSize-b2*waveSpeed)/(1+exp(i-b1*waveSize-b2*waveSpeed))-exp(j-b1*waveSize-b2*waveSpeed)/(1+exp(j-b1*waveSize-b2*waveSpeed))).toFloat())
-                    tot += (exp(i - b1 * waveSize - b2 * waveSpeed) / (1 + exp(i - b1 * waveSize - b2 * waveSpeed)) - exp(j - b1 * waveSize - b2 * waveSpeed) / (1 + exp(j - b1 * waveSize - b2 * waveSpeed))).toFloat()
-                }else{
-                    i = j + 1.1
-                    probabilities.add(a-3,(exp(i-b1*waveSize-b2*waveSpeed)/(1+exp(i-b1*waveSize-b2*waveSpeed))-exp(j-b1*waveSize-b2*waveSpeed)/(1+exp(j-b1*waveSize-b2*waveSpeed))).toFloat())
-                    tot += (exp(i - b1 * waveSize - b2 * waveSpeed) / (1 + exp(i - b1 * waveSize - b2 * waveSpeed)) - exp(j - b1 * waveSize - b2 * waveSpeed) / (1 + exp(j - b1 * waveSize - b2 * waveSpeed))).toFloat()
+                when (a) {
+                    7 -> {
+                        probabilities.add(a-3, 1 - tot)
+                    }
+                    4 -> {
+                        i = j + 1.2
+                        probabilities.add(a-3, (exp(i-b1*waveSize-b2*waveSpeed)/(1+exp(i-b1*waveSize-b2*waveSpeed))-exp(j-b1*waveSize-b2*waveSpeed)/(1+exp(j-b1*waveSize-b2*waveSpeed))).toFloat())
+                        tot += (exp(i - b1 * waveSize - b2 * waveSpeed) / (1 + exp(i - b1 * waveSize - b2 * waveSpeed)) - exp(j - b1 * waveSize - b2 * waveSpeed) / (1 + exp(j - b1 * waveSize - b2 * waveSpeed))).toFloat()
+                    }
+                    else -> {
+                        i = j + 1.1
+                        probabilities.add(a-3,(exp(i-b1*waveSize-b2*waveSpeed)/(1+exp(i-b1*waveSize-b2*waveSpeed))-exp(j-b1*waveSize-b2*waveSpeed)/(1+exp(j-b1*waveSize-b2*waveSpeed))).toFloat())
+                        tot += (exp(i - b1 * waveSize - b2 * waveSpeed) / (1 + exp(i - b1 * waveSize - b2 * waveSpeed)) - exp(j - b1 * waveSize - b2 * waveSpeed) / (1 + exp(j - b1 * waveSize - b2 * waveSpeed))).toFloat()
+                    }
                 }
             }else{
                 i = j
@@ -152,7 +150,7 @@ data class SpotsJson(val list: List<SurfespotJson>)
 
 data class Base2(val type: String?, val geometry: Geometry2?, val properties: Properties2?)
 
-data class Data2(val instant: Instant2?, val next_1_hours: Next_1_hours2?)
+data class Data2(val instant: Instant2?, val next_1_hours: Next1hours2?)
 
 data class Details2(val air_temperature: Float?, val precipitation_rate: Float?, val relative_humidity: Float?, val wind_from_direction: Float?, val wind_speed: Float?, val wind_speed_of_gust: Float?)
 
@@ -162,7 +160,7 @@ data class Instant2(val details: Details2?)
 
 data class Meta2(val updated_at: String?, val units: Units2?, val radar_coverage: String?)
 
-data class Next_1_hours2(val summary: Summary2?, val details: Details2?)
+data class Next1hours2(val summary: Summary2?, val details: Details2?)
 
 data class Properties2(val meta: Meta2?, val timeseries: List<Timeseries5905723>?)
 
