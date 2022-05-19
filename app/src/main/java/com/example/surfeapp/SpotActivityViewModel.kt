@@ -10,7 +10,6 @@ import kotlinx.coroutines.launch
 import kotlin.math.abs
 
 class SpotActivityViewModel : ViewModel() {
-    //ViewModel (V)
 
     private val dataSource = DataSource()
 

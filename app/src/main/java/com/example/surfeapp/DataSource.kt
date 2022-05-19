@@ -45,8 +45,7 @@ class DataSource {
                 val windFromDirection = responseNow.properties?.timeseries?.get(0)?.data?.instant?.details?.wind_from_direction
 
                 conditions = Conditions(waveSize, currentSpeed, currentDirection, airTemperature, precipitationRate, windSpeed, windFromDirection)
-                println(conditions.toString())
-                println(spot.toString())
+
             } catch(exception: Exception) {
                 println("A network request exception was thrown: ${exception.message}")
             }

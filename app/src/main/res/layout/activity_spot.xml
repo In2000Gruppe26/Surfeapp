@@ -146,7 +146,6 @@
                                     android:id="@+id/bolgeTekst1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Sett inn"
                                     android:textSize="15dp">
 
                                 </TextView>
@@ -173,7 +172,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="7dp"
-                                    android:text="Sett inn"
                                     android:textSize="15dp">
 
                                 </TextView>
@@ -197,15 +195,14 @@
                                 </TextView>
 
 
-                                    <TextView
-                                        android:id="@+id/bolgeTekst3"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Sett inn"
-                                        android:layout_marginLeft="17dp"
-                                        android:textSize="15dp">
+                                <TextView
+                                    android:id="@+id/bolgeTekst3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="17dp"
+                                    android:textSize="15dp">
 
-                                    </TextView>
+                                </TextView>
 
                                 <ImageView
                                     android:id="@+id/retning"
@@ -281,7 +278,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="16dp"
-                                    android:text="Sett inn"
                                     android:textSize="15dp">
 
                                 </TextView>
@@ -308,7 +304,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="18dp"
-                                    android:text="Sett inn"
                                     android:textSize="15dp">
 
                                 </TextView>
@@ -383,7 +378,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="0dp"
-                                    android:text="0"
                                     android:textSize="15dp">
 
                                 </TextView>
@@ -402,12 +396,12 @@
                                     android:textSize="15dp">
 
                                 </TextView>
+
                                 <TextView
                                     android:id="@+id/nedbor"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="18dp"
-                                    android:text="0"
                                     android:textSize="15dp">
 
                                 </TextView>
@@ -444,7 +438,6 @@
                     android:id="@+id/besTekst"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sett inn"
                     android:textSize="15dp"
                     tools:textStyle="normal">
 

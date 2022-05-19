@@ -1,5 +1,4 @@
 package com.example.surfeapp
-import android.location.Location
 
 data class Coordinates(val latitude: Double, val longitude: Double)
 

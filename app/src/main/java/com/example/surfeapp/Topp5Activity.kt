@@ -11,11 +11,9 @@ class Topp5Activity : AppCompatActivity() {
         setContentView(R.layout.activity_top5)
 
         val actionbar = supportActionBar
-        //set actionbar title
+
         actionbar!!.title = "Vanskelig å velge spot?"
-        //supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FFA1DBF6")))
-        //set back button
-        actionbar.setDisplayHomeAsUpEnabled(true)
+
         actionbar.setDisplayHomeAsUpEnabled(true)
 
         val button1 = findViewById<Button>(R.id.b1)
